@@ -12,13 +12,14 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    print(message)
     if message.author == client.user:
         return
-        print('message')
 
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
         print('read hello')
-print(TOKEN)
+
+
 client.run(TOKEN)
 
