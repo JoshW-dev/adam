@@ -2,22 +2,38 @@ import os
 import time
 import pyautogui
 
+
+
+def moveto(xcord, ycord, dur):
+    pyautogui.moveTo(xcord, ycord, duration=dur, tween=pyautogui.easeInOutQuad)
+        
+def click():
+    pyautogui.click()
+
+def typeCharacters(string):
+    pyautogui.write(string, interval=0.15)
+
+def presskey(keyName):
+    pyautogui.press(keyName)
+
+def hotkey():
+    pyautogui.hotkey('alt', 'tab') 
+
+def wait(sleeptime):
+    time.sleep(sleeptime)
+
 print("start")
-
-#click 
-time.sleep(2)
-pyautogui.moveTo(500, 500, duration=2, tween=pyautogui.easeInOutQuad)
-pyautogui.click()
-pyautogui.moveTo(400, 400, duration=2, tween=pyautogui.easeInOutQuad)
-pyautogui.click()
-
-
-time.sleep(1)
-
-#type
-pyautogui.hotkey('alt', 'tab') # Press the Ctrl-C hotkey combination.
-pyautogui.moveTo(200, 200, duration=2, tween=pyautogui.easeInOutQuad)
-pyautogui.click()
-pyautogui.write('Hello world!', interval=0.25)
+wait(2)
+#move to discord chat line
+moveto(650,1055,1)
+#move to discord chat line
+click()
+typeCharacters("/imagine")
+presskey("enter")
+wait(0.1)
+typeCharacters("A beautiful painting")
+wait(0.1)
+presskey("enter")
 
 print("end")
+
