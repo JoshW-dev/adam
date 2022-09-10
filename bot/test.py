@@ -1,4 +1,8 @@
 from clickerTyper import commands
 import action 
 
-action.upscale1("remaster")    
+prompt = "a sentence"
+tags = ", ethereal, limerent, dream-like, black and white"
+
+thing =prompt +tags
+print(thing)     
