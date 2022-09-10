@@ -23,9 +23,11 @@ def sendPrompt(prompt):
 
 #choose a versio to upscale 
 def upscale1(choice):
-    promptLocations = {1: [615,715], 2: [730,715], 3:[615,775], 4:[730,775]} #discord webapp in chrome aligned to left side of laptop screen
+    promptLocations = {1: [615,715], 2: [730,715], 3:[615,775], 4:[730,775],
+    "max": [615,600],"light": [615,660], "beta": [615,720], "remaster": [615,780]
+    } #discord webapp in chrome aligned to left side of laptop screen
     #in order of U1, U2, U3, U4
-    #todo: figure out a better way to set this
+    #todo: figure out a better way to set this and control upscaling
     commands.moveto(1000*random.random(),1000*random.random(),1)
     commands.wait(0.5)
     #move to button for chosen upscale option 

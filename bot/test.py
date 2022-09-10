@@ -1,4 +1,4 @@
 from clickerTyper import commands
 import action 
 
-action.upscale1(1)
+action.upscale1("remaster")    
