@@ -11,7 +11,7 @@ class commands:
         pyautogui.click()
 
     def typeCharacters(string):
-        pyautogui.write(string, interval=0.15)
+        pyautogui.write(string, interval=0.1)
 
     def presskey(keyName):
         pyautogui.press(keyName)
