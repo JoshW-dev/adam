@@ -7,7 +7,7 @@ def sendPrompt(prompt):
     promptLocation = [650,1055] #discord webapp in chrome aligned to left side of laptop screen
     #todo: figure out a better way to set this
 
-    commands.moveto(1000*random.random(),1000*random.random(),1)
+    commands.moveto(1200+10*random.random(),1000*random.random(),1)
     commands.wait(0.5)
     #move to discord chat line
     commands.moveto(promptLocation[0],promptLocation[1],1)
@@ -29,7 +29,7 @@ def upscale1(choice):
     } #discord webapp in chrome aligned to left side of laptop screen
     #in order of U1, U2, U3, U4
     #todo: figure out a better way to set this and control upscaling
-    commands.moveto(1000*random.random(),1000*random.random(),1)
+    commands.moveto(1200+10*random.random(),1000*random.random(),1)
     commands.wait(0.5)
     #move to button for chosen upscale option 
     commands.moveto(promptLocations[choice][0],promptLocations[choice][1],1)
