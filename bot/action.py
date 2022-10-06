@@ -25,7 +25,7 @@ def sendPrompt(prompt):
 def upscale1(choice):
     promptLocations = {1: [615,715], 2: [730,715], 3:[615,775], 4:[730,775],
     "max": [615,600],"light": [615,660], "beta": [615,720], "remaster": [615,780], 
-    "remaster1": [615,840], "remaster2": [730,840]
+    "remaster1": [615,840], "remaster2": [730,840], "remaster#1": [615,900]
     } #discord webapp in chrome aligned to left side of laptop screen
     #in order of U1, U2, U3, U4
     #todo: figure out a better way to set this and control upscaling
@@ -49,7 +49,6 @@ def postInsta(file, caption):
     print(file)
     print(caption)
     print("end insta post")
-
 
 
 #postInsta("file1","an insta post #tag1 #tag2")

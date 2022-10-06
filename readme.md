@@ -9,10 +9,12 @@ Tried using a discord bot and discord API with discord-py for communication with
 Clicker/typer bot seems to be working, test with instagram uploads
 
 
+
 ## MVP
 
 App webscrapes news and generates an image daily. Hosted online (starting on github)
 - midjourney for image generation from tags
+- need python package for taking screenshot and clicking right area 
 - react frontend
 - python django backend
 -   python library for webscrapping and condensing text to tags
@@ -21,7 +23,6 @@ App webscrapes news and generates an image daily. Hosted online (starting on git
 
 ## todo
 - create single imput commandline and output frontend
-- connect to discord API
 - text input will generate image
 - image output is sent to front end
 

@@ -21,4 +21,14 @@ class commands:
 
     def wait(sleeptime):
         time.sleep(sleeptime)
-
+    
+    def checkPromptComplete():
+        #ensure cursor is not hovering over buttons when checking
+        buttonLocation = (636, 971)
+        buttonGrey = (79, 84, 92)
+        currentColor = pyautogui.pixel(buttonLocation[0], buttonLocation[1])
+        if currentColor == buttonGrey:
+            print("Prompt Complete")
+            return True    
+        return False
+        
