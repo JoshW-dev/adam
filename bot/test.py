@@ -8,7 +8,12 @@ import keyboard
 import win32api, win32con
 
 
-            
+
+location = pyautogui.locateOnScreen('Assets\U1-Button.png')
+print(location)
+
+wait(100)
+
 complete = False    
 while not complete:
     complete = commands.checkPromptComplete()

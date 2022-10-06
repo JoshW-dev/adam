@@ -31,4 +31,8 @@ class commands:
             print("Prompt Complete")
             return True    
         return False
-        
+
+    def locateButton(button):
+        if button == "U!":
+            location = pyautogui.locateOnScreen('Assets\U1-Button.png')
+        return location
