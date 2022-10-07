@@ -3,8 +3,7 @@ import random
 
 from clickerTyper import commands
 
-
-with open('input1.txt') as f:
+with open('./Inputs/input1.txt') as f:
     prompts = f.read().splitlines()
 
 tags = ""
@@ -14,26 +13,23 @@ print("Started...")
 for prompt in prompts:
     fullPrompt = (prompt +tags)
     print(fullPrompt)
-    
+    #Stage 1
     action.sendPrompt(fullPrompt)
-    print("init gen...70")
-    commands.wait(70) 
-    #approx initial generation wait time + 10 seconds (relaxed) 
-    action.upscale1(random.randint(1, 4))
-    print("init upscale...120")
-    commands.wait(120) 
-    #approx first upscale wait time + 20 seconds (relaxed)
-    action.upscale1("remaster")
-    print("init remaster...80")
-    commands.wait(90) 
-    action.upscale1("remaster#1")
-    print("second remaster...90")
-    commands.wait(60) 
+    print("init gen...")
+    complete = action.waitForPrompt(1)
+    #Stage 2
+    action.upscale1("U"+str(random.randint(1, 4))+"-Button.png")#randomly upscale 1 of 4 variations
+    print("init upscale...")
+    complete = action.waitForPrompt(2)
+    #Stage 3
+    action.upscale1("Remaster-Button.png")
+    print("init remaster...")
+    complete = action.waitForPrompt(3)
+    #Stage 4
+    action.upscale1("U1-Button.png")
+    print("remaster upscale...")
+    complete = action.waitForPrompt(4)
     print("prompt complete")
     
     
-    #approx light redo upscale wait time (relaxed) - 60
-    #approx beta redo upscale wait time (relaxed) - 70
-    #approx remaster redo upscale wait time (relaxed) - 
-
 print("done")

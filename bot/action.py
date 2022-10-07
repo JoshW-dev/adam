@@ -4,14 +4,11 @@ from clickerTyper import commands
 
 # send prompt to midjourney commandline
 def sendPrompt(prompt):
-    promptLocation = [650,1055] #discord webapp in chrome aligned to left side of laptop screen
-    #todo: figure out a better way to set this
-
-    commands.moveto(1200+10*random.random(),1000*random.random(),1)
-    commands.wait(0.5)
+    commands.movetoRandom(1200,1000,0.5)
+    commands.wait(0.2)
     #move to discord chat line
-    commands.moveto(promptLocation[0],promptLocation[1],1)
-    #move to discord chat line
+    promptLocation = commands.locateButton("Text-Input.png", .9)
+    commands.movetoRandom(promptLocation[0],promptLocation[1],.5)
     commands.click()
     commands.typeCharacters("/imagine")
     commands.presskey("enter")
@@ -20,21 +17,27 @@ def sendPrompt(prompt):
     commands.wait(0.1)
     commands.presskey("enter")
 
+def waitForPrompt(stage):
+    loading = True
+    commands.wait(15)
+    print("Loading: " + str(loading))
+    while loading:
+        print("Stage " + str(stage) + ": loading...")
+        commands.wait(3)
+        complete = commands.checkPromptComplete(stage)
+        loading = not complete
+    print("Stage " + str(stage) + " Complete")
+    return True
 
-#choose a versio to upscale 
-def upscale1(choice):
-    promptLocations = {1: [615,715], 2: [730,715], 3:[615,775], 4:[730,775],
-    "max": [615,600],"light": [615,660], "beta": [615,720], "remaster": [615,780], 
-    "remaster1": [615,840], "remaster2": [730,840], "remaster#1": [615,900]
-    } #discord webapp in chrome aligned to left side of laptop screen
-    #in order of U1, U2, U3, U4
-    #todo: figure out a better way to set this and control upscaling
-    commands.moveto(1200+10*random.random(),1000*random.random(),1)
-    commands.wait(0.5)
-    #move to button for chosen upscale option 
-    commands.moveto(promptLocations[choice][0],promptLocations[choice][1],1)
+#choose a version to upscale 
+def upscale1(buttonChoice):
+    commands.movetoRandom(1200,1000,0.5)
+    buttonLocation = commands.locateButton(buttonChoice, .9)
+    commands.movetoRandom(buttonLocation[0],buttonLocation[1],.5)
     commands.click()
- 
+    commands.movetoRandom(1200,1000,0.5)
+    
+
 #post on instagram
 def postInsta(file, caption):  
     uploadLocation = [1645,160] #discord webapp in chrome aligned to left side of laptop screen  

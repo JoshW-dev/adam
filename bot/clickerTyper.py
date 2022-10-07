@@ -35,21 +35,32 @@ class commands:
         return pyautogui.pixel(location[0], location[1])
         
 
-    def checkPromptComplete():
-        #ensure cursor is not hovering over buttons when checking
-        buttonLocationGrey = (636, 971)
-        buttonLocationWhite = (632, 961)
-        buttonGrey = (79, 84, 92)
-        buttonWhite = (255, 255, 255)
-        #check that V3 button appears in correct area
-        # Todo: find a better way to do this        
-        if (commands.pixelColor(buttonLocationGrey) == buttonGrey and 
-            commands.pixelColor(buttonLocationWhite) == buttonWhite):
-            print("Prompt Complete")
-            return True    
-        return False
-
     def locateButton(buttonName, alpha):
-        location = pyautogui.locateOnScreen('./Assets/'+buttonName, confidence=alpha)
-        buttonPoint = pyautogui.center(location)
+        buttonPoint = pyautogui.locateCenterOnScreen('./Assets/'+buttonName, confidence=alpha, region=(475,540,460,650)) #region is bottom left area of screen with output images+buttons
+        #Will return "None" if not found (must convert to str)
         return buttonPoint
+
+    def checkPromptComplete(stage):
+        #ensure cursor is not hovering over buttons when checking
+        #stage 1: check complete after initial gen - check that U1 and V1 buttons show
+        if stage == 1 or stage == 3:
+            U1ButtonLocation = commands.locateButton("U1-Button.png", 0.9)
+            if (str(U1ButtonLocation) == 'None'):
+                return False
+            else:
+                return True
+        #stage 2: check complete after first upscaling - check that remaster and variation buttons show
+        elif stage == 2:
+            remasterButtonLocation = commands.locateButton("Remaster-Button.png", 0.9)
+            if (str(remasterButtonLocation) == 'None'):
+                return False
+            else:
+                return True
+        #stage 4: check complete after second upscaling - check that remaster and variation buttons show
+        elif stage == 4:
+            Variations_Web_Location = commands.locateButton("Variations&Web-Button.png", 0.9)
+            if (str(Variations_Web_Location) == "None"):
+                return False
+            else:
+                return True
+        
