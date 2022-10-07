@@ -8,15 +8,12 @@ import keyboard
 import win32api, win32con
 
 
-
-location = pyautogui.locateOnScreen('Assets\U1-Button.png')
-print(location)
-
-wait(100)
-
-complete = False    
+action.sendPrompt("Still life painting --ar 2:3")
+    
+commands.wait(10)
+complete = False
 while not complete:
     complete = commands.checkPromptComplete()
-    time.sleep(1)
-    print("...")
-print("done")
+    print("Loading...")
+    commands.wait(1)
+
