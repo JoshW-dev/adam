@@ -1,6 +1,7 @@
 import logo from './adamLogo.png';
 import './App.css';
 import UserInput from './components/input';
+import React, { Component }  from 'react';
 
 function App() {
   return (

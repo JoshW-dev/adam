@@ -8,8 +8,5 @@ import keyboard
 import win32api, win32con
 
 
-    
-
-
 complete = commands.checkPromptComplete(2)
 print(complete)
