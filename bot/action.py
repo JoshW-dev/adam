@@ -38,6 +38,15 @@ def upscale1(buttonChoice):
     commands.movetoRandom(1200,1000,0.5)
     
 
+
+def writeToInput(lines):
+    f = open("./Inputs/input.txt", "w")
+    f.write(lines)
+    f.close()
+
+
+#needs rework
+
 #post on instagram
 def postInsta(file, caption):  
     uploadLocation = [1645,160] #discord webapp in chrome aligned to left side of laptop screen  

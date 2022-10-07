@@ -3,7 +3,7 @@ import random
 
 from clickerTyper import commands
 
-with open('./Inputs/input1.txt') as f:
+with open('./Inputs/input.txt') as f:
     prompts = f.read().splitlines()
 
 tags = ""
