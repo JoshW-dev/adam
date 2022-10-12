@@ -1,8 +1,13 @@
 import requests
 import action
 from bs4 import BeautifulSoup
+
+
 #BBC  news: world news headlines
 url = "https://www.bbc.com/news/world"
+
+print("Webscrapping...")
+print(url)
 
 #get headlines
 response = requests.get(url)
@@ -19,5 +24,8 @@ prompts =""
 
 #write to input text file
 for headline in headlines:
-    prompts+= headline + "\n"
+    prompts+= headline + action.keywords(headline)+ "\n"
 action.writeToInput(prompts)
+
+print("Webscrapper complete")
+print(str(len(headlines)) + " new prompts")

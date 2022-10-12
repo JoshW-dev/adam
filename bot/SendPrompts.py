@@ -6,7 +6,7 @@ from clickerTyper import commands
 with open('./Inputs/input.txt') as f:
     prompts = f.read().splitlines()
 
-tags = ""
+tags = " --ar 2:3"
 
 
 print("Started...")

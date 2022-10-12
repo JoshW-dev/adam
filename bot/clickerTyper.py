@@ -15,7 +15,10 @@ class commands:
             
     def click():
         pyautogui.click()
-
+        
+    def rightClick():
+        pyautogui.click(button='right')
+    
     def typeCharacters(string):
         pyautogui.write(string, interval=0.1)
 

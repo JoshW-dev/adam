@@ -6,6 +6,13 @@ import random
 import time
 import keyboard
 import win32api, win32con
+import yake
+import requests
+import pyperclip
 
 
-action.writeToInput("test line")
+
+action.copyWebUrl()
+url = pyperclip.paste()
+
+print(url)

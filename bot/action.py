@@ -1,6 +1,15 @@
 import random
+import yake
 from clickerTyper import commands
 
+#keyword extraction
+language = "en"
+max_ngram_size = 2
+deduplication_threshold = 0.9
+deduplication_algo = 'seqm'
+windowSize = 1
+numOfKeywords = 2
+kw_extractor = yake.KeywordExtractor(lan=language, n=max_ngram_size, dedupLim=deduplication_threshold, dedupFunc=deduplication_algo, windowsSize=windowSize, top=numOfKeywords, features=None)   
 
 # send prompt to midjourney commandline
 def sendPrompt(prompt):
@@ -37,12 +46,32 @@ def upscale1(buttonChoice):
     commands.click()
     commands.movetoRandom(1200,1000,0.5)
     
+def keywords(input):
+    keywords = kw_extractor.extract_keywords(input)
+    list =""
+    for kw in keywords:
+        list+= ", "+ kw[0]
+    return list
 
 
 def writeToInput(lines):
     f = open("./Inputs/input.txt", "w")
     f.write(lines)
     f.close()
+
+
+def copyWebUrl():
+    #find a better way to do this
+    
+    #saw some bugs where the copy url button was not recognized, if this happens more, look into better way
+    commands.movetoRandom(1200,1000,0.5)
+    buttonLocation = commands.locateButton("Web-Button.png", .9)
+    commands.movetoRandom(buttonLocation[0],buttonLocation[1],.5)
+    commands.rightClick()
+    buttonLocation = commands.locateButton("Copy-Link-Button.png", .7)
+    commands.movetoRandom(buttonLocation[0],buttonLocation[1],.5)
+    commands.click()
+    commands.movetoRandom(1200,1000,0.5)
 
 
 #needs rework
