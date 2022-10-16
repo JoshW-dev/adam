@@ -22,19 +22,13 @@ App webscrapes news and generates an image daily. Hosted online (starting on git
 
 
 ## todo
-- create single imput commandline and output frontend
-- text input will generate image
-- image output is sent to front end
 
--create tag input system
+https://trello.com/b/YbxNFGLX/adam
 
-
-## done
--skeleton react project with input field
--got basic clicking and typing bot script
 
 ## Tools
 - https://pyautogui.readthedocs.io/en/latest/
 ## Future Ideas
-
+- twitter commentary bot for famous person/tweets
+- news reporting bot
 
