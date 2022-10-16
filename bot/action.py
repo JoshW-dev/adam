@@ -1,5 +1,8 @@
 import random
 import yake
+import requests
+import shutil
+
 from clickerTyper import commands
 
 #keyword extraction
@@ -16,7 +19,7 @@ def sendPrompt(prompt):
     commands.movetoRandom(1200,1000,0.5)
     commands.wait(0.2)
     #move to discord chat line
-    promptLocation = commands.locateButton("Text-Input.png", .9)
+    promptLocation = commands.locateButton("Text-Input.png", .7)
     commands.movetoRandom(promptLocation[0],promptLocation[1],.5)
     commands.click()
     commands.typeCharacters("/imagine")
@@ -41,7 +44,7 @@ def waitForPrompt(stage):
 #choose a version to upscale 
 def upscale1(buttonChoice):
     commands.movetoRandom(1200,1000,0.5)
-    buttonLocation = commands.locateButton(buttonChoice, .9)
+    buttonLocation = commands.locateButton(buttonChoice, .7)
     commands.movetoRandom(buttonLocation[0],buttonLocation[1],.5)
     commands.click()
     commands.movetoRandom(1200,1000,0.5)
@@ -59,15 +62,19 @@ def writeToInput(lines):
     f.write(lines)
     f.close()
 
+def writeToOutput(lines):
+    with open('./Outputs/output.txt','a') as f:
+        f.write(lines)
 
 def copyWebUrl():
     #find a better way to do this
     
     #saw some bugs where the copy url button was not recognized, if this happens more, look into better way
     commands.movetoRandom(1200,1000,0.5)
-    buttonLocation = commands.locateButton("Web-Button.png", .9)
+    buttonLocation = commands.locateButton("Web-Button.png", .7)
     commands.movetoRandom(buttonLocation[0],buttonLocation[1],.5)
     commands.rightClick()
+    commands.wait(0.1)
     buttonLocation = commands.locateButton("Copy-Link-Button.png", .7)
     commands.movetoRandom(buttonLocation[0],buttonLocation[1],.5)
     commands.click()
@@ -75,6 +82,16 @@ def copyWebUrl():
 
 
 #needs rework
+
+
+def downloadImage(url, name):
+    #put this in env
+    downloadLocation = "C:/Users/Josh Wade/Desktop/code/Projects/adam/bot/GeneratedImages/"
+    r = requests.get(url, stream=True)
+    if r.status_code == 200:
+        with open(downloadLocation + name+".png", 'wb') as f:
+            r.raw.decode_content = True
+            shutil.copyfileobj(r.raw, f)
 
 #post on instagram
 def postInsta(file, caption):  

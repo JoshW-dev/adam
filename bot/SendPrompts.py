@@ -1,6 +1,6 @@
 import action 
 import random
-
+import pyperclip
 from clickerTyper import commands
 
 with open('./Inputs/input.txt') as f:
@@ -31,5 +31,14 @@ for prompt in prompts:
     complete = action.waitForPrompt(4)
     print("prompt complete")
     
+    #Stage 5 - copy headline and Job URL
+    action.copyWebUrl()
+    print("Grabbing Image URL...")    
+    jobID = pyperclip.paste().split("www.midjourney.com/app/jobs/")[1]
+    out = prompt + "##" + jobID + "\n"
+    action.writeToOutput(out)
+    print("Saved to output.txt")
+    
+
     
 print("done")
