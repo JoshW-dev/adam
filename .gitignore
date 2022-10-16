@@ -1,7 +1,14 @@
+# Byte-compiled / optimized / DLL files
+**/bot/__pycache__/
+*.py[cod]
+
+
 .env
 ### react ###
 
 **/node_modules
 **/testing
+
+#generated images
 **/bot/GeneratedImages
 
