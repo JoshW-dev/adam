@@ -2,6 +2,9 @@ import random
 import yake
 import requests
 import shutil
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 from clickerTyper import commands
 
@@ -85,8 +88,7 @@ def copyWebUrl():
 
 
 def downloadImage(url, name):
-    #put this in env
-    downloadLocation = "C:/Users/Josh Wade/Desktop/code/Projects/adam/bot/GeneratedImages/"
+    downloadLocation = os.getenv('Local-Download-Location')
     r = requests.get(url, stream=True)
     if r.status_code == 200:
         with open(downloadLocation + name+".png", 'wb') as f:
