@@ -3,19 +3,11 @@ import yake
 import requests
 import shutil
 import os
+import download
 from dotenv import load_dotenv
 load_dotenv()
 
 from clickerTyper import commands
-
-#keyword extraction
-language = "en"
-max_ngram_size = 2
-deduplication_threshold = 0.9
-deduplication_algo = 'seqm'
-windowSize = 1
-numOfKeywords = 2
-kw_extractor = yake.KeywordExtractor(lan=language, n=max_ngram_size, dedupLim=deduplication_threshold, dedupFunc=deduplication_algo, windowsSize=windowSize, top=numOfKeywords, features=None)   
 
 # send prompt to midjourney commandline
 def sendPrompt(prompt):
@@ -51,12 +43,18 @@ def upscale1(buttonChoice):
     commands.movetoRandom(buttonLocation[0],buttonLocation[1],.5)
     commands.click()
     commands.movetoRandom(1200,1000,0.5)
-    
-def keywords(input):
+
+#keyword extraction
+language = "en"
+deduplication_threshold = 0.9
+deduplication_algo = 'seqm'
+windowSize = 1 
+def keywords(input, numOfKeywords,max_ngram_size):
+    kw_extractor = yake.KeywordExtractor(lan=language, n=max_ngram_size, dedupLim=deduplication_threshold, dedupFunc=deduplication_algo, windowsSize=windowSize, top=numOfKeywords, features=None)   
     keywords = kw_extractor.extract_keywords(input)
-    list =""
+    list =[]
     for kw in keywords:
-        list+= ", "+ kw[0]
+        list.append(kw[0])
     return list
 
 
@@ -86,7 +84,6 @@ def copyWebUrl():
 
 #needs rework
 
-
 def downloadImage(url, name):
     downloadLocation = os.getenv('Local-Download-Location')
     r = requests.get(url, stream=True)
@@ -94,6 +91,11 @@ def downloadImage(url, name):
         with open(downloadLocation + name+".png", 'wb') as f:
             r.raw.decode_content = True
             shutil.copyfileobj(r.raw, f)
+
+def downloadImages():
+    #download all generated images from output.txt
+    images = download.parseOutput()
+    download.downloadOutputs(images)    
 
 #post on instagram
 def postInsta(file, caption):  

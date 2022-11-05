@@ -1,5 +1,6 @@
 import requests
 import action
+import random
 from bs4 import BeautifulSoup
 
 
@@ -22,7 +23,7 @@ def scrape():
     prompts =""
     #write to input text file
     for headline in headlines:
-        prompts+= headline + action.keywords(headline)+ "\n"
+        prompts+= headline + "\n"
     action.writeToInput(prompts)
     print("Webscrapper complete")
     print(str(len(headlines)) + " new prompts")
@@ -32,7 +33,6 @@ def getQuotes(keywords):
     print("Fetching Quotes")
     
     for keyword in keywords:
-        print(keyword)
         url+=keyword+"+"
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -42,8 +42,6 @@ def getQuotes(keywords):
         quote = (group.text.split("\n"))
         filteredQuote = [string for string in quote if string != ""]
         quotes.append(filteredQuote)
-    
-    for quote in quotes:
-        print(quote[0] + "\n -\"" + quote[1] + "\" \n")
 
-    return quotes
+    #only return 1 random quote for now
+    return random.choice(quotes)

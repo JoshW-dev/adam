@@ -5,17 +5,24 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Consumer keys and access tokens, used for OAuth
-CONSUMER_KEY = (os.getenv("Twitter-API-Key"))
-CONSUMER_SECRET = (os.getenv("Twitter-API-Key-Secret"))
-ACCESS_KEY = (os.getenv("Twitter-Access-Token"))
-ACCESS_SECRET = (os.getenv("Twitter-Access-Token-Secret"))
+consumer_key = (os.getenv("Twitter-API-Key"))
+consumer_secret = (os.getenv("Twitter-API-Key-Secret"))
+access_token = (os.getenv("Twitter-Access-Token"))
+access_token_secret = (os.getenv("Twitter-Access-Token-Secret"))
+bearer_token = (os.getenv("Twitter-Bearer-Token"))
 
-# OAuth process, using the keys and tokens
-auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
+### Authorization protocol
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
 
-# Creation of the actual interface, using authentication
+### Providing access to API 
 api = tweepy.API(auth)
 
-# Sample method, used to update a status, you can write message whatever you want to post in twitter
-api.update_status("Hello World!" + " #artAI" )
+### Tweeting to the linked twitter account
+def tweet():
+    api.update_status(status = "hello")
+
+def getPublicTweets():
+    public_tweets = api.home_timeline()
+    for tweet in public_tweets:
+        print(tweet.text)

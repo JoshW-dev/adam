@@ -1,3 +1,4 @@
+from click import prompt
 from clickerTyper import commands
 import action
 import pyautogui
@@ -11,9 +12,10 @@ import requests
 import pyperclip
 import os
 import webscrapper
+import download
+import twitter
 from dotenv import load_dotenv
 
-load_dotenv()
+message = "This is now bone of my bones and flesh of my flesh"
+twitter.tweet()
 
-keywords = ["war"]
-webscrapper.getQuotes(keywords)

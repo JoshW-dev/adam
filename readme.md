@@ -9,6 +9,8 @@ Tried using a discord bot and discord API with discord-py for communication with
 Clicker/typer bot seems to be working, test with instagram uploads
 
 
+A 'personality' system can be used for just generating tags -> should be more simple to implement
+
 
 ## MVP
 
@@ -24,6 +26,8 @@ App webscrapes news and generates an image daily. Hosted online (starting on git
 ## todo
 
 https://trello.com/b/YbxNFGLX/adam
+
+
 
 
 ## Tools

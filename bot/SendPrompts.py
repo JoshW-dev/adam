@@ -1,20 +1,31 @@
+from ast import keyword
 import action 
 import random
 import pyperclip
+import webscrapper
+
 from clickerTyper import commands
 
 with open('./Inputs/input.txt') as f:
     prompts = f.read().splitlines()
 
-tags = " --ar 2:3"
+tags = ", Atmosphere, Cinematic lighting, 8k  --ar 3:2"
 
 
 print("Started...")
 for prompt in prompts:
-    fullPrompt = (prompt +tags)
+    keywords = ", " + ', '.join(action.keywords(prompt,2,2))
+    fullPrompt = (prompt +keywords+ tags)
     print(fullPrompt)
     #Stage 1
     action.sendPrompt(fullPrompt)
+    #regen keywords for quote gen
+    keywords = action.keywords(prompt,3,1)
+    #Get quote 
+    #quoteList = webscrapper.getQuotes(keywords)
+    #quote = "\""+quoteList[0] +"\"" +"\n\n-"+ quoteList[1]
+    quote = "no quote"
+    print(quote)
     print("init gen...")
     complete = action.waitForPrompt(1)
     #Stage 2
@@ -35,7 +46,7 @@ for prompt in prompts:
     action.copyWebUrl()
     print("Grabbing Image URL...")    
     jobID = pyperclip.paste().split("www.midjourney.com/app/jobs/")[1]
-    out = prompt + "##" + jobID + "\n"
+    out = prompt + "\n##" + jobID + "## \n\n" + quote+  "\n\n ------\n\n\n"
     action.writeToOutput(out)
     print("Saved to output.txt")
     
