@@ -16,6 +16,8 @@ import download
 import twitter
 from dotenv import load_dotenv
 
-message = "This is now bone of my bones and flesh of my flesh"
-twitter.tweet()
+message = "It is not good that the man should be alone; I will make him a helper as his partner."
+imageName = "adam.png"
+#twitter.tweet(message)
+twitter.tweetPic(tweetText=message, imageName=imageName)
 

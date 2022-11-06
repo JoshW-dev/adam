@@ -10,7 +10,7 @@ consumer_secret = (os.getenv("Twitter-API-Key-Secret"))
 access_token = (os.getenv("Twitter-Access-Token"))
 access_token_secret = (os.getenv("Twitter-Access-Token-Secret"))
 bearer_token = (os.getenv("Twitter-Bearer-Token"))
-
+imagePath = os.getenv('Local-Download-Location')
 ### Authorization protocol
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -19,9 +19,17 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 ### Tweeting to the linked twitter account
-def tweet():
-    api.update_status(status = "hello")
+def tweet(tweetText):
+    print("sending tweet \n" + tweetText)
+    api.update_status(status = tweetText)
 
+def tweetPic(tweetText, imageName):
+    print("Sending tweet \n" + tweetText)
+    print("With image \n" + imageName)
+    media = api.media_upload(imagePath+imageName)
+    post_result = api.update_status(status=tweetText, media_ids=[media.media_id])
+    print(post_result)
+    
 def getPublicTweets():
     public_tweets = api.home_timeline()
     for tweet in public_tweets:

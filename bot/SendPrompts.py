@@ -9,7 +9,7 @@ from clickerTyper import commands
 with open('./Inputs/input.txt') as f:
     prompts = f.read().splitlines()
 
-tags = ", Atmosphere, Cinematic lighting, 8k  --ar 3:2"
+tags = ", highly detailed, Cinematic lighting, 8k"
 
 
 print("Started...")
