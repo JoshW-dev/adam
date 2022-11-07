@@ -4,6 +4,7 @@ import requests
 import shutil
 import os
 import download
+import re
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -57,6 +58,32 @@ def keywords(input, numOfKeywords,max_ngram_size):
         list.append(kw[0])
     return list
 
+def replaceBannedWords(message):
+    #cycle through dictionary of midjourney banned terms and replace with acceptable words
+    BannedwordsKill = ["Crucifixion", "Car crash", "Crucified", "Kill", "Slaughter", "Decapitate", "Killing", "Vivisection", "Massacre", "Suicide"]
+    BannedwordsGore =  ["Blood", "Bloodbath", "Bloody", "Flesh", "Bruises", "Corpse", "Cutting", "Infested", "Gruesome", "Infected", "Sadist", "Teratoma", "Tryphophobia", "Wound", "Cronenberg", "Khorne", "Cannibal", "Cannibalism", "Visceral", "Guts", "Bloodshot", "Gory", "Surgery", "Hemoglobin"]
+    BannedwordsTaboo = ["Fascist", "Nazi", "Prophet Mohammed", "Slave", "Coon", "Honkey"]
+    BannedwordsDrugs = ["Cocaine", "Heroin", "Meth", "Crack"]
+
+    replaceWordKill="slain"
+    replaceWordGore = "painful"
+    replaceWordTaboo = "evil"
+    replaceWordDrugs = "drugs"
+
+    for word in BannedwordsKill:
+        cleanMessage = re.sub('(?i)'+re.escape(word), lambda m: replaceWordKill, message)
+        message = cleanMessage
+    for word in BannedwordsGore:
+        cleanMessage = re.sub('(?i)'+re.escape(word), lambda m: replaceWordGore, message)
+        message = cleanMessage
+    for word in BannedwordsTaboo:
+        cleanMessage = re.sub('(?i)'+re.escape(word), lambda m: replaceWordTaboo, message)
+        message = cleanMessage
+    for word in BannedwordsDrugs:
+        cleanMessage = re.sub('(?i)'+re.escape(word), lambda m: replaceWordDrugs, message)
+        message = cleanMessage
+
+    return message
 
 def writeToInput(lines):
     f = open("./Inputs/input.txt", "w")

@@ -14,10 +14,16 @@ import os
 import webscrapper
 import download
 import twitter
+import re
 from dotenv import load_dotenv
 
+webscrapper.scrape()
+
+'''
 message = "It is not good that the man should be alone; I will make him a helper as his partner."
 imageName = "adam.png"
-#twitter.tweet(message)
+twitter.tweet(message)
 twitter.tweetPic(tweetText=message, imageName=imageName)
+
+'''
 
