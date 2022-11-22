@@ -90,6 +90,9 @@ def writeToInput(lines):
     f.write(lines)
     f.close()
 
+def eraseInput():
+    open("./Inputs/input.txt", "w").close()
+    
 def writeToOutput(lines):
     with open('./Outputs/output.txt','a') as f:
         f.write(lines)

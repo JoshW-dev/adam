@@ -28,6 +28,8 @@ class commands:
 
     def hotkey():
         pyautogui.hotkey('alt', 'tab') 
+    def alignLeft():
+        pyautogui.hotkey('win', 'left') 
 
     def wait(sleeptime):
         time.sleep(sleeptime)

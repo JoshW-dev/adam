@@ -18,6 +18,7 @@ def scrape():
     headlines = []
     for story in stories:
         headlines.append(story.text)
+        print(story.text)
     #remove duplicates
     headlines = list(set(headlines))
     prompts =""

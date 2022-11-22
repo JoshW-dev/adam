@@ -16,8 +16,10 @@ import download
 import twitter
 import re
 from dotenv import load_dotenv
+import webbrowser
+import SendPrompts
 
-webscrapper.scrape()
+action.eraseInput()
 
 '''
 message = "It is not good that the man should be alone; I will make him a helper as his partner."
