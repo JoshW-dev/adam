@@ -18,8 +18,10 @@ import re
 from dotenv import load_dotenv
 import webbrowser
 import SendPrompts
+import imageEdit
 
-action.eraseInput()
+
+imageEdit.addText('fd668b6d-f800-43d5-87bf-eac128850e9b.png', 'Sample Text')
 
 '''
 message = "It is not good that the man should be alone; I will make him a helper as his partner."

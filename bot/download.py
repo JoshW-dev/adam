@@ -1,5 +1,5 @@
 import action
-
+import os
 def parseOutput():
         with open('./Outputs/output.txt') as f:
                 images = f.read().split("------") 

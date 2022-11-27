@@ -21,8 +21,8 @@ def send(tags):
         #regen keywords for quote gen
         keywords = action.keywords(prompt,3,1)
         #Get quote 
-        #quoteList = webscrapper.getQuotes(keywords)
-        #quote = "\""+quoteList[0] +"\"" +"\n\n-"+ quoteList[1]
+        quoteList = webscrapper.getQuotes(keywords)
+        quote = "\""+quoteList[0] +"\"" +"\n\n-"+ quoteList[1]
         quote = "no quote"
         print(quote)
         print("init gen...")

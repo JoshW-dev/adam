@@ -92,6 +92,8 @@ def writeToInput(lines):
 
 def eraseInput():
     open("./Inputs/input.txt", "w").close()
+def eraseOutput():
+    open("./Outputs/output.txt", "w").close()
     
 def writeToOutput(lines):
     with open('./Outputs/output.txt','a') as f:
@@ -126,6 +128,10 @@ def downloadImages():
     #download all generated images from output.txt
     images = download.parseOutput()
     download.downloadOutputs(images)    
+
+def uploadImage(jobID):
+    print (jobID)
+
 
 #post on instagram
 def postInsta(file, caption):  

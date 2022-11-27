@@ -22,6 +22,14 @@ App webscrapes news and generates an image daily. Hosted online (starting on git
 -   python library for webscrapping and condensing text to tags
 
 
+## Initial working product
+Twitter bot that automatically posts based on news content -> take news headline
+- use as prompt to generate image
+- use to generate related famous quote
+- Add quote text to image
+-  
+
+
 
 ## todo
 
