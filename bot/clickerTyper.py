@@ -47,10 +47,10 @@ class commands:
         #Will return "None" if not found (must convert to str)
         #this method is kinda buggy and relies text scaling (works best at %150)
         attemps = 0
-        while(str(buttonPoint) =="None" and attemps <3):
+        while(str(buttonPoint) =="None" and attemps <30):
             buttonPoint = pyautogui.locateCenterOnScreen('./Assets/'+buttonName, confidence=(alpha-attemps*0.05), region=(475,540,460,650)) #region is bottom left area of screen with output images+buttons
             attemps+=1
-            commands.wait(0.05)
+            commands.wait(0.2)
         return buttonPoint
 
     def checkPromptComplete(stage):

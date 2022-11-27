@@ -21,7 +21,7 @@ import SendPrompts
 import imageEdit
 
 
-imageEdit.addText('fd668b6d-f800-43d5-87bf-eac128850e9b.png', 'Sample Text')
+imageEdit.addText('d8d1c951-082c-488b-9467-4c4ed5f49018.png', 'Sample Text', 'null')
 
 '''
 message = "It is not good that the man should be alone; I will make him a helper as his partner."

@@ -43,7 +43,7 @@ def send(tags):
         
         #Stage 5 - copy headline and Job URL
         action.copyWebUrl()
-        print("Grabbing Image URL...")    
+        print("Grabbing Image URL...")
         jobID = pyperclip.paste().split("www.midjourney.com/app/jobs/")[1]
         out = prompt + "\n##" + jobID + "## \n\n" + quote+  "\n\n ------\n\n\n"
         action.writeToOutput(out)

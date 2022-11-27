@@ -34,7 +34,7 @@ webscrapper.scrape()
 #open browser and go to discord midjourney chat
 midjourney_chat = os.getenv('Midjourneybot-Channel')
 webbrowser.open(midjourney_chat)
-commands.wait(8)
+commands.wait(10)
 commands.alignLeft()
 
 print("Sending prompts...")
