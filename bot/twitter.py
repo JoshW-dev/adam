@@ -34,3 +34,8 @@ def getPublicTweets():
     public_tweets = api.home_timeline()
     for tweet in public_tweets:
         print(tweet.text)
+
+#Loop through n first images and send to twitter with news headline
+
+def sendTweets(n):
+    return null

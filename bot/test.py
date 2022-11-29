@@ -20,8 +20,8 @@ import webbrowser
 import SendPrompts
 import imageEdit
 
-
-imageEdit.addText('d8d1c951-082c-488b-9467-4c4ed5f49018.png', 'Sample Text', 'null')
+image ="80f1e30d-6b57-46f1-9214-3114630445a3.png"
+imageEdit.addSignature(image)
 
 '''
 message = "It is not good that the man should be alone; I will make him a helper as his partner."

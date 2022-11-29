@@ -28,11 +28,13 @@ def sendPrompt(prompt):
 def waitForPrompt(stage):
     loading = True
     commands.wait(15)
+    complete = False
     print("Loading: " + str(loading))
     while loading:
         print("Stage " + str(stage) + ": loading...")
         commands.wait(3)
         complete = commands.checkPromptComplete(stage)
+        print("action, complete:" + str(complete))
         loading = not complete
     print("Stage " + str(stage) + " Complete")
     return True

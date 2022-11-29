@@ -23,9 +23,12 @@ def send(tags):
         #Get quote 
         quoteList = webscrapper.getQuotes(keywords)
         quote = "\""+quoteList[0] +"\"" +"\n\n-"+ quoteList[1]
-        quote = "no quote"
         print(quote)
         print("init gen...")
+        commands.wait(3)
+        if (commands.checkBanned()):
+            continue
+        print("not banned")
         complete = action.waitForPrompt(1)
         #Stage 2
         action.upscale1("U"+str(random.randint(1, 4))+"-Button.png")#randomly upscale 1 of 4 variations
@@ -49,6 +52,7 @@ def send(tags):
         action.writeToOutput(out)
         print("Saved to output.txt")
         
-
-        
     print("done")
+    return True
+        
+    

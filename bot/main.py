@@ -23,9 +23,10 @@ import SendPrompts
 tags = ", wide burshstrokes, painting, news"
 
 
-#erase old input file
+#erase old txt files
 action.eraseInput()
-commands.wait(1)
+action.eraseOutput()
+commands.wait(2)
 
 #get prompts and populate input.txt
 webscrapper.scrape()
@@ -38,8 +39,8 @@ commands.wait(10)
 commands.alignLeft()
 
 print("Sending prompts...")
-SendPrompts.send(tags)
-
+complete = SendPrompts.send(tags)
+print("Prompts complete: " + str(complete))
 #Download images
 #action.downloadImages()
 
