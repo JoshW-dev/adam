@@ -4,7 +4,7 @@ import random
 from bs4 import BeautifulSoup
 
 
-def scrape():
+def scrape(numHeadlines):
     #BBC  news: world news headlines
     url = "https://www.bbc.com/news/world"
     print("Webscrapping...")
@@ -16,7 +16,7 @@ def scrape():
 
     stories = soup.findAll('h3',{'class':'gs-c-promo-heading__title'})
     headlines = []
-    for story in stories:
+    for story in stories[:numHeadlines+1]:
         headlines.append(story.text)
         print(story.text)
     #remove duplicates
@@ -36,6 +36,7 @@ def getQuotes(keywords):
     
     for keyword in keywords:
         url+=keyword+"+"
+    
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
     groups = soup.findAll('div',{'class':'bqQt'})
@@ -43,7 +44,8 @@ def getQuotes(keywords):
     for group in groups:
         quote = (group.text.split("\n"))
         filteredQuote = [string for string in quote if string != ""]
-        quotes.append(filteredQuote)
+        if (len(filteredQuote[0])<130):
+            quotes.append(filteredQuote)
 
     #only return 1 random quote for now
     return random.choice(quotes)

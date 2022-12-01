@@ -1,26 +1,16 @@
 from click import prompt
 from clickerTyper import commands
 import action
-import pyautogui
-import action 
-import random
-import time
-import keyboard
-import win32api, win32con
-import yake
-import requests
-import pyperclip
 import os
 import webscrapper
 import download
 import twitter
-import re
-from dotenv import load_dotenv
 import webbrowser
 import SendPrompts
+import imageEdit
 
 #Set painting styles
-tags = ", wide burshstrokes, painting, news"
+tags = ", wide brushstrokes, painting, news"
 
 
 #erase old txt files
@@ -29,8 +19,7 @@ action.eraseOutput()
 commands.wait(2)
 
 #get prompts and populate input.txt
-webscrapper.scrape()
-
+webscrapper.scrape(5)
 
 #open browser and go to discord midjourney chat
 midjourney_chat = os.getenv('Midjourneybot-Channel')
@@ -40,15 +29,15 @@ commands.alignLeft()
 
 print("Sending prompts...")
 complete = SendPrompts.send(tags)
-print("Prompts complete: " + str(complete))
+print("Main - Prompts complete: " + str(complete))
+
 #Download images
-#action.downloadImages()
+download.downloadImages()
+#sign images
+imageEdit.addSignatures()
+#add quote captions
+imageEdit.addQuotes()
 
-
-#generate images
-    #Gen caption
-    #save JobIDs
-    #Download image
 #Post image
 
 #repeat

@@ -24,3 +24,7 @@ def downloadOutputs(images):
                 except:
                         print("An exception occurred")    
     
+def downloadImages():
+    #download all generated images from output.txt
+    images = parseOutput()
+    downloadOutputs(images)    

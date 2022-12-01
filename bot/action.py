@@ -64,7 +64,7 @@ def replaceBannedWords(message):
     #cycle through dictionary of midjourney banned terms and replace with acceptable words
     BannedwordsKill = ["Crucifixion", "Car crash", "Crucified", "Kill", "Slaughter", "Decapitate", "Killing", "Vivisection", "Massacre", "Suicide"]
     BannedwordsGore =  ["Blood", "Bloodbath", "Bloody", "Flesh", "Bruises", "Corpse", "Cutting", "Infested", "Gruesome", "Infected", "Sadist", "Teratoma", "Tryphophobia", "Wound", "Cronenberg", "Khorne", "Cannibal", "Cannibalism", "Visceral", "Guts", "Bloodshot", "Gory", "Surgery", "Hemoglobin"]
-    BannedwordsTaboo = ["Fascist", "Nazi", "Prophet Mohammed", "Slave", "Coon", "Honkey"]
+    BannedwordsTaboo = ["Fascist", "Nazi", "Prophet Mohammed", "Slave", "Coon", "Honkey", "rape"]
     BannedwordsDrugs = ["Cocaine", "Heroin", "Meth", "Crack"]
 
     replaceWordKill="slain"
@@ -125,11 +125,6 @@ def downloadImage(url, name):
         with open(downloadLocation + name+".png", 'wb') as f:
             r.raw.decode_content = True
             shutil.copyfileobj(r.raw, f)
-
-def downloadImages():
-    #download all generated images from output.txt
-    images = download.parseOutput()
-    download.downloadOutputs(images)    
 
 def uploadImage(jobID):
     print (jobID)
