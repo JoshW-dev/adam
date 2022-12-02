@@ -1,5 +1,6 @@
 import tweepy
 import os
+import download
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -37,5 +38,30 @@ def getPublicTweets():
 
 #Loop through n first images and send to twitter with news headline
 
-def sendTweets(n):
-    return null
+def sendTweets():
+    images = download.parseOutput()
+    for image in images:
+                try:
+                        prompt = image.split("##")[0]
+                        jobID = image.split("##")[1].replace("/", "" )
+                        caption = image.split("##")[2]
+
+                        print(prompt)
+                        print(jobID) 
+                        print(caption) 
+                        
+
+                        hastags="#News #AI #Art"
+                        tweetMessage = prompt + "BBC News"+"\n\n"+hastags
+                        #tweetPic(tweetText=tweetMessage, imageName=jobID + ".png")
+
+                        #twitter.tweetPic(tweetText=message, imageName=imageName)
+                        '''
+                        message = "It is not good that the man should be alone; I will make him a helper as his partner."
+                        imageName = "adam.png"
+                        twitter.tweet(message)
+                        twitter.tweetPic(tweetText=message, imageName=imageName)
+
+                        '''
+                except:
+                        print("An exception occurred")

@@ -21,10 +21,7 @@ import SendPrompts
 import imageEdit
 
 
-imageEdit.addSignatures()
-#add quote captions
-imageEdit.addQuotes()
-
+twitter.sendTweets()
 '''
 message = "It is not good that the man should be alone; I will make him a helper as his partner."
 imageName = "adam.png"
