@@ -32,7 +32,7 @@ def scrape(numHeadlines):
 
 def getQuotes(keywords):
     url = "https://www.brainyquote.com/search_results?q=" 
-    print("Fetching Quotes")
+    print("Fetching Quotes" + str(keywords))
     
     for keyword in keywords:
         url+=keyword+"+"

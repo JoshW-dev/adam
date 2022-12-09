@@ -20,13 +20,13 @@ import webbrowser
 import SendPrompts
 import imageEdit
 
+#Download images
+download.downloadImages()
+#sign images
+imageEdit.addSignatures()
+#add quote captions
+imageEdit.addQuotes()
 
+print("Finished -> Send Tweets")
+#Post images
 twitter.sendTweets()
-'''
-message = "It is not good that the man should be alone; I will make him a helper as his partner."
-imageName = "adam.png"
-twitter.tweet(message)
-twitter.tweetPic(tweetText=message, imageName=imageName)
-
-'''
-

@@ -19,7 +19,7 @@ action.eraseOutput()
 commands.wait(2)
 
 #get prompts and populate input.txt
-webscrapper.scrape(5)
+webscrapper.scrape(10)
 
 #open browser and go to discord midjourney chat
 midjourney_chat = os.getenv('Midjourneybot-Channel')
@@ -38,8 +38,9 @@ imageEdit.addSignatures()
 #add quote captions
 imageEdit.addQuotes()
 
-#Post image
-
+print("Finished -> Send Tweets")
+#Post images
+twitter.sendTweets()
 #repeat
 
 

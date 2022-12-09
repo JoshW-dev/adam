@@ -52,10 +52,9 @@ def sendTweets():
                         
 
                         hastags="#News #AI #Art"
-                        tweetMessage = prompt + "BBC News"+"\n\n"+hastags
-                        #tweetPic(tweetText=tweetMessage, imageName=jobID + ".png")
+                        tweetMessage = prompt + "-BBC News"+"\n\n"+hastags
+                        tweetPic(tweetText=tweetMessage, imageName=jobID + ".png")
 
-                        #twitter.tweetPic(tweetText=message, imageName=imageName)
                         '''
                         message = "It is not good that the man should be alone; I will make him a helper as his partner."
                         imageName = "adam.png"

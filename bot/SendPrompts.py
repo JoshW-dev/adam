@@ -25,7 +25,7 @@ def send(tags):
         quote = "\""+quoteList[0] +"\"" +"\n\n-"+ quoteList[1]
         print(quote)
         print("init gen...")
-        commands.wait(3)
+        commands.wait(5)
         if (commands.checkBanned()):
             continue
         print("not banned")

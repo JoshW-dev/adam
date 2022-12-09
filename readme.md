@@ -12,6 +12,9 @@ Clicker/typer bot seems to be working, test with instagram uploads
 A 'personality' system can be used for just generating tags -> should be more simple to implement
 
 
+the qupte searching system needs rework., default to no quote unless certain criteria met
+
+
 ## MVP
 
 App webscrapes news and generates an image daily. Hosted online (starting on github)
