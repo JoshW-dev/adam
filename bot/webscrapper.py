@@ -48,4 +48,9 @@ def getQuotes(keywords):
             quotes.append(filteredQuote)
 
     #only return 1 random quote for now
-    return random.choice(quotes)
+    try:
+        choice = random.choice(quotes)
+    except:
+        choice = ["",""]
+
+    return choice

@@ -20,10 +20,14 @@ def send(tags):
         action.sendPrompt(fullPrompt)
         #regen keywords for quote gen
         keywords = action.keywords(prompt,3,1)
+        
+        
         #Get quote 
         quoteList = webscrapper.getQuotes(keywords)
         quote = "\""+quoteList[0] +"\"" +"\n\n-"+ quoteList[1]
-        print(quote)
+        #print(quote)
+        
+
         print("init gen...")
         commands.wait(5)
         if (commands.checkBanned()):

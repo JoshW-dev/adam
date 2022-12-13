@@ -51,7 +51,7 @@ def sendTweets():
                         print(caption) 
                         
 
-                        hastags="#News #AI #Art"
+                        hastags="#News #AI #Art #BBC"
                         tweetMessage = prompt + "-BBC News"+"\n\n"+hastags
                         tweetPic(tweetText=tweetMessage, imageName=jobID + ".png")
 

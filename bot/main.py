@@ -8,9 +8,12 @@ import twitter
 import webbrowser
 import SendPrompts
 import imageEdit
+import time
 
 #Set painting styles
-tags = ", wide brushstrokes, painting, news"
+tags = ", wide brushstrokes, painting, news, realistic, award winning photography"
+
+start = time.time()
 
 
 #erase old txt files
@@ -35,12 +38,17 @@ print("Main - Prompts complete: " + str(complete))
 download.downloadImages()
 #sign images
 imageEdit.addSignatures()
+
+
 #add quote captions
-imageEdit.addQuotes()
+#imageEdit.addQuotes()
 
 print("Finished -> Send Tweets")
 #Post images
 twitter.sendTweets()
 #repeat
+print("Complete")
+end = time.time()
 
-
+executionLength = end - start
+print("Total execution time: " + executionLength)

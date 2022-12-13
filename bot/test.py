@@ -25,7 +25,7 @@ download.downloadImages()
 #sign images
 imageEdit.addSignatures()
 #add quote captions
-imageEdit.addQuotes()
+#imageEdit.addQuotes()
 
 print("Finished -> Send Tweets")
 #Post images
