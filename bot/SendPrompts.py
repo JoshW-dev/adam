@@ -13,6 +13,8 @@ def send(tags):
 
     print("Started...")
     for prompt in prompts:
+        headline = prompt
+        prompt = action.replaceBannedWords(headline)
         keywords = ", " + ', '.join(action.keywords(prompt,2,2))
         fullPrompt = (prompt +keywords+ tags)
         print(fullPrompt)
@@ -20,7 +22,6 @@ def send(tags):
         action.sendPrompt(fullPrompt)
         #regen keywords for quote gen
         keywords = action.keywords(prompt,3,1)
-        
         
         #Get quote 
         quoteList = webscrapper.getQuotes(keywords)
@@ -37,6 +38,8 @@ def send(tags):
         #Stage 2
         action.upscale1("U"+str(random.randint(1, 4))+"-Button.png")#randomly upscale 1 of 4 variations
         print("init upscale...")
+        '''
+
         complete = action.waitForPrompt(2)
         #Stage 3
         action.upscale1("Remaster-Button.png")
@@ -45,6 +48,8 @@ def send(tags):
         #Stage 4
         action.upscale1("U1-Button.png")
         print("remaster upscale...")
+        '''
+
         complete = action.waitForPrompt(4)
         print("prompt complete")
         
@@ -52,7 +57,7 @@ def send(tags):
         action.copyWebUrl()
         print("Grabbing Image URL...")
         jobID = pyperclip.paste().split("www.midjourney.com/app/jobs/")[1]
-        out = prompt + "\n##" + jobID + "## \n\n" + quote+  "\n\n ------\n\n\n"
+        out = headline + "\n##" + jobID + "## \n\n" + quote+  "\n\n ------\n\n\n"
         action.writeToOutput(out)
         print("Saved to output.txt")
         

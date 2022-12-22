@@ -11,7 +11,7 @@ import imageEdit
 import time
 
 #Set painting styles
-tags = ", wide brushstrokes, painting, news, realistic, award winning photography"
+tags = ", wide brushstrokes, news, realistic, award winning photography, creative, rich colors, photograph,"
 
 start = time.time()
 
@@ -51,4 +51,4 @@ print("Complete")
 end = time.time()
 
 executionLength = end - start
-print("Total execution time: " + executionLength)
+print("Total execution time: " + str(executionLength/60) + " minutes")

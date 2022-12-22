@@ -24,8 +24,8 @@ def scrape(numHeadlines):
     prompts =""
     #write to input text file
     for headline in headlines:
-        cleanedHeadline = action.replaceBannedWords(headline)
-        prompts+= cleanedHeadline + "\n"
+        prompts+= headline + "\n"
+
     action.writeToInput(prompts)
     print("Webscrapper complete")
     print(str(len(headlines)) + " new prompts")

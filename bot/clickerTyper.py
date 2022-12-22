@@ -69,9 +69,9 @@ class commands:
                 return False
             else:
                 return True
-        #stage 4: check complete after second upscaling - check that remaster and variation buttons show
+        #stage 4: check complete after second upscaling - check that Web button shows
         elif stage == 4:
-            Variations_Web_Location = commands.locateButton("Variations&Web-Button.png", 0.7)
+            Variations_Web_Location = commands.locateButton("Web-Button.png", 0.7)
             if (str(Variations_Web_Location) == "None"):
                 return False
             else:
