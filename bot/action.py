@@ -32,7 +32,7 @@ def waitForPrompt(stage):
     print("Loading: " + str(loading))
     while loading:
         print("Stage " + str(stage) + ": loading...")
-        commands.wait(3)
+        commands.wait(5)
         complete = commands.checkPromptComplete(stage)
         print("action, complete:" + str(complete))
         loading = not complete

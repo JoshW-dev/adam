@@ -20,13 +20,9 @@ import webbrowser
 import SendPrompts
 import imageEdit
 
-#Download images
-download.downloadImages()
-#sign images
-imageEdit.addSignatures()
-#add quote captions
-#imageEdit.addQuotes()
 
-print("Finished -> Send Tweets")
-#Post images
-twitter.sendTweets()
+
+Instagram_ID = (os.getenv("Instagram-ID"))
+Instagram_Access_Token = (os.getenv("Instagram-User-Access-Token-Long"))
+
+#test auto post image
