@@ -12,7 +12,11 @@ Clicker/typer bot seems to be working, test with instagram uploads
 A 'personality' system can be used for just generating tags -> should be more simple to implement
 
 
-the qupte searching system needs rework., default to no quote unless certain criteria met
+The quote searching system needs rework., default to no quote unless certain criteria met
+
+
+Sending in parallel
+- idea: send all prompts immediately and upscale all as buttons are seen - testing this now
 
 
 ## MVP
