@@ -9,7 +9,7 @@ import webbrowser
 import SendPrompts
 import imageEdit
 import time
-
+import postingContent as postInsta
 #Set painting styles
 tags = ", wide brushstrokes, news, realistic, award winning photography, creative, rich colors, photograph,"
 
@@ -46,7 +46,10 @@ imageEdit.addSignatures()
 print("Finished -> Send Tweets")
 #Post images
 twitter.sendTweets()
-#repeat
+postInsta.postOutputImages()
+
+
+#sending complete 
 print("Complete")
 end = time.time()
 

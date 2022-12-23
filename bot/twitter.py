@@ -50,17 +50,8 @@ def sendTweets():
                         print(jobID) 
                         print(caption) 
                         
-
                         hastags="#News #AI #Art #BBC"
                         tweetMessage = prompt + "-BBC News"+"\n\n"+hastags
                         tweetPic(tweetText=tweetMessage, imageName=jobID + ".png")
-
-                        '''
-                        message = "It is not good that the man should be alone; I will make him a helper as his partner."
-                        imageName = "adam.png"
-                        twitter.tweet(message)
-                        twitter.tweetPic(tweetText=message, imageName=imageName)
-
-                        '''
                 except:
                         print("An exception occurred")

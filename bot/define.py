@@ -26,8 +26,6 @@ def makeApiCall( url, endpointParams, type) :
     Returns:
         object: data from the endpoint
     """
-    print("Make API call")
-    
     if type == 'POST' :
         data = requests.post( url, endpointParams ) # make get request
     else:
