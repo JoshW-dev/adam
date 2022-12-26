@@ -14,7 +14,16 @@ def getCreds() :
     creds['graph_version'] = 'v15.0' # version of the api we are hitting
     creds['endpoint_base'] = creds['graph_domain'] + creds['graph_version'] + '/' # base endpoint with domain and version
     creds['instagram_account_id'] = (os.getenv("Instagram-Business-Account-ID")) # users instagram account id
-    
+    return creds
+
+#not tested
+def getCredsFB() :
+    creds = dict() # dictionary to hold everything
+    creds['access_token'] = (os.getenv("Facebook-Page-Access-Token")) # access token for use with all api calls
+    creds['graph_domain'] = 'https://graph.facebook.com/' # base domain for api calls
+    creds['graph_version'] = 'v15.0' # version of the api we are hitting
+    creds['endpoint_base'] = creds['graph_domain'] + creds['graph_version'] + '/' # base endpoint with domain and version
+    creds['page_id'] = (os.getenv("Facebook-ID")) # facebook account id
     return creds
 
 def makeApiCall( url, endpointParams, type) :

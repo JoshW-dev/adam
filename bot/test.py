@@ -22,8 +22,18 @@ import imageEdit
 import postingContent as postInsta
 
 
-hastags="#News #AI #Art #BBC"
-#test auto post image
-testUrl= 'https://cdn.midjourney.com/73e37430-ca21-42e1-a8d3-695ce775487e/grid_0.png'
-testCaption = 'This is a Test \n\n' + hastags
-postInsta.postImage(testUrl,testCaption)
+#Download images
+download.downloadImages()
+#sign images
+imageEdit.addSignatures()
+
+
+#add quote captions
+#imageEdit.addQuotes()
+
+print("Finished -> Send Tweets")
+#Post images
+twitter.sendTweets()
+postInsta.postOutputImages()
+
+
