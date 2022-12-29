@@ -19,6 +19,7 @@ def sendPrompt(prompt):
     commands.movetoRandom(promptLocation[0],promptLocation[1],.5)
     commands.click()
     commands.typeCharacters("/imagine")
+    commands.wait(0.5)
     commands.presskey("enter")
     commands.wait(0.1)
     commands.typeCharacters(prompt)

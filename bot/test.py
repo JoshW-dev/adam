@@ -5,8 +5,6 @@ import pyautogui
 import action 
 import random
 import time
-import keyboard
-import win32api, win32con
 import yake
 import requests
 import pyperclip
@@ -26,7 +24,6 @@ import postingContent as postInsta
 download.downloadImages()
 #sign images
 imageEdit.addSignatures()
-
 
 #add quote captions
 #imageEdit.addQuotes()

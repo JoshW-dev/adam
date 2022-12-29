@@ -1,4 +1,3 @@
-from click import prompt
 from clickerTyper import commands
 import action
 import os
@@ -11,10 +10,9 @@ import imageEdit
 import time
 import postingContent
 #Set painting styles
-tags = ", wide brushstrokes, news, realistic, award winning photography, creative, rich colors, photograph,"
+tags = ", news, realistic, award winning photography, creative, rich colors, photograph,"
 
 start = time.time()
-
 
 #erase old txt files
 action.eraseInput()

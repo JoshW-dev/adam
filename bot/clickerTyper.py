@@ -1,7 +1,6 @@
 import os
 import time
 import random
-from keyboard import wait
 import pyautogui
 
 
@@ -21,7 +20,7 @@ class commands:
         pyautogui.click(button='right')
     
     def typeCharacters(string):
-        pyautogui.write(string, interval=0.05)
+        pyautogui.write(string, interval=0.03)
 
     def presskey(keyName):
         pyautogui.press(keyName)
