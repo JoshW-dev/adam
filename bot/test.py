@@ -19,18 +19,6 @@ import SendPrompts
 import imageEdit
 import postingContent as postInsta
 
+#download.downloadImages()
 
-#Download images
-download.downloadImages()
-#sign images
-imageEdit.addSignatures()
-
-#add quote captions
-#imageEdit.addQuotes()
-
-print("Finished -> Send Tweets")
-#Post images
-twitter.sendTweets()
-postInsta.postOutputImages()
-
-
+imageEdit.addQuotes()

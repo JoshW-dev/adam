@@ -6,31 +6,45 @@ imagePath = os.getenv('Local-Download-Location')
 import textwrap
 import download
 
-#modularize to more than just quotes
-def addText(imageName, text, type):
+
+def addText2(imageName, text, type):
     print("Adding: " + text)
     print("To: " + imageName)        
-
-    maxCharactersPerLine = 50
-    text = addNewlines(text,maxCharactersPerLine)
-    FONT_PATH = './Assets/roboto/Roboto-Medium.ttf'
-    font_size = 80
-    font = ImageFont.truetype(FONT_PATH, size=font_size)
-    
-    # Open an Image
+    print("Type: " + type)        
+    caption = text
     img = Image.open(imagePath + imageName)
-    
-    width, height = img.size
-    position = (width*.1, height*.8)
-    # get a drawing context
-    d = ImageDraw.Draw(img, "RGBA")
-    #textbook
-    bbox = d.textbbox(position, text, font=font)    
-    d.rectangle(bbox, fill= (0, 0, 0, 110))
-    # draw multiline text
-    d.multiline_text(position, text, font = font, fill=(255, 255, 255))
+    d = ImageDraw.Draw(img)
+    font = ImageFont.truetype('impact.ttf', size=50)
+    d.text((10, 400), caption, fill='white', font=font,
+        stroke_width=2, stroke_fill='black')
     img.save(imagePath + imageName)
     print("Added text")
+
+#modularize to more than just quotes
+def addText(imageName, text, type):
+    print("Adding: " + text + "\nTo: " + imageName + "\nType: " + type) 
+    img = Image.open(imagePath + imageName)
+    font = ImageFont.truetype('./Assets/Arial.ttf', 25) 
+    maxChars = 70
+    text = addNewlines(text,maxChars)
+    width, height = img.size
+    position = (width*.05, height*.85)
+    # get a drawing context
+    d = ImageDraw.Draw(img, "RGBA")
+
+    #textbook
+    left, top, right, bottom = d.textbbox(position, text, font=font)    
+    d.rectangle((left-5, top-5, right+5, bottom+5), fill= (255, 255, 255, 50))
+    d.text(position, text, font=font, fill="black")
+
+    # draw multiline text
+    d.multiline_text(position, text, font = font, fill=(0, 0, 0))
+    img.save(imagePath + imageName)
+    print("Added text")
+
+def addNewlines(text,maxChars):
+    t = ('\n'.join(textwrap.wrap(text, maxChars)))
+    return t
 
 #loop through all output images and add tied quotes
 def addQuotes():
@@ -41,15 +55,10 @@ def addQuotes():
                         prompt = image.split("##")[0]
                         jobID = image.split("##")[1].replace("/", "" )
                         caption = image.split("##")[2]                        
-                        addText((jobID+".png"),caption, "nullType")
+                        addText((jobID+".png"),caption, "bottom-small")
                 except:
                         print("An exception occurred")
-    
 
-def addNewlines(text,maxChars):
-    #print(text)
-    s = ('\n'.join(textwrap.wrap(text, maxChars)))
-    return s.replace("-", "\n     -" )
 
 #loop through all output images and add quotes
 def addSignature(backgroundImage):
@@ -74,4 +83,3 @@ def addSignatures():
                         addSignature(jobID + ".png")
                 except:
                         print("An exception occurred")
-    

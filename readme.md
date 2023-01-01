@@ -51,4 +51,5 @@ https://trello.com/b/YbxNFGLX/adam
 ## Future Ideas
 - twitter commentary bot for famous person/tweets
 - news reporting bot
+- alt news pubs, Russia Today, La Press/le monde,  
 

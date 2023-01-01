@@ -25,10 +25,8 @@ def send(tags):
         
         #Get quote 
         quoteList = webscrapper.getQuotes(keywords)
-        quote = "\""+quoteList[0] +"\"" +"\n\n-"+ quoteList[1]
-        #print(quote)
+        quote = "\""+quoteList[0] +"\"" +"\n    -"+ quoteList[1]
         
-
         print("init gen...")
         commands.wait(5)
         if (commands.checkBanned()):
@@ -57,7 +55,7 @@ def send(tags):
         action.copyWebUrl()
         print("Grabbing Image URL...")
         jobID = pyperclip.paste().split("www.midjourney.com/app/jobs/")[1]
-        out = headline + "\n##" + jobID + "## \n\n" + quote+  "\n\n ------\n\n\n"
+        out = headline + "\n##" + jobID + "##\n" + quote+  "\n ------\n"
         action.writeToOutput(out)
         print("Saved to output.txt")
         
