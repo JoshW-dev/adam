@@ -19,6 +19,10 @@ import SendPrompts
 import imageEdit
 import postingContent as postInsta
 
-#download.downloadImages()
 
-imageEdit.addQuotes()
+#find standard button locations
+
+
+#Web
+webbuttonLocation = commands.locateButton("Web-Button.png", .7)
+print(webbuttonLocation)

@@ -16,6 +16,10 @@ def sendPrompt(prompt):
     commands.wait(0.2)
     #move to discord chat line
     promptLocation = commands.locateButton("Text-Input.png", .7)
+    if str(promptLocation)=="None":
+        print("Prompt location not found, revert to default position")
+        promptLocation = [606,1054]
+
     commands.movetoRandom(promptLocation[0],promptLocation[1],.5)
     commands.click()
     commands.typeCharacters("/imagine")
@@ -44,6 +48,9 @@ def waitForPrompt(stage):
 def upscale1(buttonChoice):
     commands.movetoRandom(1200,1000,0.5)
     buttonLocation = commands.locateButton(buttonChoice, .7)
+    if str(buttonLocation)=="None":
+        print("Upscale Button not found in screenshot, revert to default position for U1")
+        buttonLocation = [638, 714]
     commands.movetoRandom(buttonLocation[0],buttonLocation[1],.5)
     commands.click()
     commands.movetoRandom(1200,1000,0.5)
@@ -113,6 +120,11 @@ def copyWebUrl():
     #saw some bugs where the copy url button was not recognized, if this happens more, look into better way
     commands.movetoRandom(1200,1000,0.5)
     buttonLocation = commands.locateButton("Web-Button.png", .7)
+    #Point(x=649, y=834)
+    if str(buttonLocation)=="None":
+        print("Web Button not found in screenshot, revert to default position")
+        buttonLocation = [649, 834]
+
     commands.movetoRandom(buttonLocation[0],buttonLocation[1],.5)
     commands.rightClick()
     commands.wait(0.1)
