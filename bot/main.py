@@ -36,16 +36,13 @@ print("Main - Prompts complete: " + str(complete))
 download.downloadImages()
 #sign images
 imageEdit.addSignatures()
-
-
 #add quote captions
-imageEdit.addQuotes()
-
-print("Finished -> Send Tweets")
+quotesAdded = imageEdit.addQuotes()
+commands.wait(5)
 #Post images
+print("Finished -> Send Tweets")
 twitter.sendTweets()
 postingContent.postOutputImages()
-
 
 #sending complete 
 print("Complete")

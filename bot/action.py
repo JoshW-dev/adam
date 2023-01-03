@@ -29,6 +29,8 @@ def sendPrompt(prompt):
     commands.typeCharacters(prompt)
     commands.wait(0.1)
     commands.presskey("enter")
+    commands.movetoRandom(1200,1000,0.5)
+    
 
 def waitForPrompt(stage):
     loading = True

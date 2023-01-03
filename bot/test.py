@@ -20,9 +20,8 @@ import imageEdit
 import postingContent as postInsta
 
 
-#find standard button locations
-
-
-#Web
-webbuttonLocation = commands.locateButton("Web-Button.png", .7)
-print(webbuttonLocation)
+testimage = "cec89fa3-93a9-48a7-bef3-10169e02234f.png"
+text = "I saw her in a dream, Exiting the bookstore lobby"
+type="middle-med"
+#imageEdit.addText(testimage, text, type)
+print(len(text))    
