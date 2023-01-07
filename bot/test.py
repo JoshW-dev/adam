@@ -20,8 +20,8 @@ import imageEdit
 import postingContent as postInsta
 
 
-testimage = "cec89fa3-93a9-48a7-bef3-10169e02234f.png"
-text = "I saw her in a dream, Exiting the bookstore lobby"
-type="middle-med"
-#imageEdit.addText(testimage, text, type)
+testimage = "e726fae9-3caa-4809-aadb-ecc710e66ba2.png"
+text = "I saw her in a dream, Exiting the bookstore lobby, I saw her in a dream, Exiting the bookstore lobby"
+type="bottom-med"
+imageEdit.addText(testimage, text, type)
 print(len(text))    

@@ -16,6 +16,10 @@ def addText(imageName, text, type):
         fontSize = 25
         maxChars = 70
         position = (width*.05, height*.85)
+    elif type == "bottom-med":
+        fontSize = 35
+        maxChars = 54
+        position = (width*.05, height*.83)
     else:
         fontSize = 40
         maxChars = 48
@@ -63,7 +67,7 @@ def addSignature(backgroundImage):
     width, height = img1.size
 
     back_im = img1.copy()
-    back_im.paste(img2, (int(width*0.8), int(height*0.88)), img2)
+    back_im.paste(img2, (int(width*0.8), int(height*0.89)), img2)
     back_im.save(imagePath + backgroundImage, quality=100)
     print("Signed")
 
