@@ -20,8 +20,4 @@ import imageEdit
 import postingContent as postInsta
 
 
-testimage = "e726fae9-3caa-4809-aadb-ecc710e66ba2.png"
-text = "I saw her in a dream, Exiting the bookstore lobby, I saw her in a dream, Exiting the bookstore lobby"
-type="bottom-med"
-imageEdit.addText(testimage, text, type)
-print(len(text))    
+imageEdit.addWaterMarks()

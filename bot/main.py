@@ -37,7 +37,11 @@ download.downloadImages()
 #sign images
 imageEdit.addSignatures()
 #add quote captions
-quotesAdded = imageEdit.addQuotes()
+#quotesAdded = imageEdit.addQuotes()
+#add AI watermark
+waterMarksAdded = imageEdit.addWaterMarks()
+
+
 commands.wait(5)
 #Post images
 print("Finished -> Send Tweets")

@@ -20,6 +20,15 @@ def addText(imageName, text, type):
         fontSize = 35
         maxChars = 54
         position = (width*.05, height*.83)
+    elif type == "water-mark":
+        fontSize = 40
+        maxChars = 100
+        position = (width*.24, height*.8)
+    
+    elif type == "topLeft-small":
+        fontSize = 20
+        maxChars = 70
+        position = (width*0.005, height*0.005)
     else:
         fontSize = 40
         maxChars = 48
@@ -32,7 +41,7 @@ def addText(imageName, text, type):
 
     #textbook
     left, top, right, bottom = d.textbbox(position, text, font=font)    
-    d.rectangle((left-5, top-5, right+5, bottom+5), fill= (255, 255, 255, 65))
+    d.rectangle((left-5, top-5, right+5, bottom+5), fill= (255, 255, 255, 75))
     d.text(position, text, font=font, fill="black")
 
     # draw multiline text
@@ -53,11 +62,22 @@ def addQuotes():
                         prompt = image.split("##")[0]
                         jobID = image.split("##")[1].replace("/", "" )
                         caption = image.split("##")[2]                        
-                        addText((jobID+".png"),caption, "bottom-small")
+                        addText((jobID+".png"),caption, "bottom-med")
                 except:
                         print("An exception occurred")
                         return (True)
-
+def addWaterMarks():
+    print("Adding Watermark to all output images...")
+    images = download.parseOutput()
+    for image in images:
+                try:
+                        prompt = image.split("##")[0]
+                        jobID = image.split("##")[1].replace("/", "" )
+                        caption = "AI GENERATED @ai_adam_"
+                        addText((jobID+".png"),caption, "water-mark")
+                except:
+                        print("An exception occurred")
+                        return (True)
 
 #loop through all output images and add quotes
 def addSignature(backgroundImage):
