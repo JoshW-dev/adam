@@ -9,26 +9,29 @@ def scrape(numHeadlines):
     url = "https://www.bbc.com/news/world"
     print("Webscrapping...")
     print(url)
-
+    print("# headlines = " +str(numHeadlines))
     #get headlines
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
 
     stories = soup.findAll('h3',{'class':'gs-c-promo-heading__title'})
+    print("# stories = "+ str(len(stories)))
     headlines = []
-    for story in stories[:numHeadlines+1]:
+    for story in stories:
         headlines.append(story.text)
-        print(story.text)
     #remove duplicates
     headlines = list(set(headlines))
     prompts =""
     #write to input text file
+    i = 0
     for headline in headlines:
+        print(headline)
         prompts+= headline + "\n"
-
+        i+=1
+        if(i>=numHeadlines):
+            break
     action.writeToInput(prompts)
     print("Webscrapper complete")
-    print(str(len(headlines)) + " new prompts")
 
 def getQuotes(keywords):
     url = "https://www.brainyquote.com/search_results?q=" 

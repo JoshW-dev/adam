@@ -14,13 +14,24 @@ tags = ", news, realistic, award winning photography, creative, rich colors, pho
 
 start = time.time()
 
+#clear commandline
+for i in range(50):
+    print()
+print("Adam: Starting Webscrape")
+print("News - BBC World")
+for i in range(5):
+    commands.wait(2)
+    print(i+"...")
+print("rewriting")
 #erase old txt files
 action.eraseInput()
 action.eraseOutput()
-commands.wait(2)
+
+commands.wait(1)
 
 #get prompts and populate input.txt
-webscrapper.scrape(10)
+webscrapper.scrape(20)
+commands.wait(3)
 
 #open browser and go to discord midjourney chat
 midjourney_chat = os.getenv('Midjourneybot-Channel')
@@ -45,8 +56,8 @@ waterMarksAdded = imageEdit.addWaterMarks()
 commands.wait(5)
 #Post images
 print("Finished -> Send Tweets")
-twitter.sendTweets()
-postingContent.postOutputImages()
+#twitter.sendTweets()
+#postingContent.postOutputImages()
 
 #sending complete 
 print("Complete")
