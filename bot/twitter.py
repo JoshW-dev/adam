@@ -49,9 +49,7 @@ def sendTweets():
                         print(prompt)
                         print(jobID) 
                         print(caption) 
-                        
-                        hastags="#News #AI #Art #BBC"
-                        tweetMessage = prompt + "-BBC News"+"\n\n"+hastags
+                        tweetMessage = caption
                         tweetPic(tweetText=tweetMessage, imageName=jobID + ".png")
                 except:
                         print("An exception occurred")

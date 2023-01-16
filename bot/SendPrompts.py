@@ -6,7 +6,7 @@ import webscrapper
 
 from clickerTyper import commands
 
-
+hashTags = " #News #AI #Art #BBC"
 def send(tags):
     with open('./Inputs/input.txt') as f:
         prompts = f.read().splitlines()
@@ -27,6 +27,9 @@ def send(tags):
         quoteList = webscrapper.getQuotes(keywords)
         quote = "\""+quoteList[0] +"\"" +"\n    -"+ quoteList[1]
         
+        #create caption
+        caption = headline + "\n-BBC News"+"\n\n" +' #'+(action.keywords(prompt,2,1)[0])+' #'+(action.keywords(prompt,2,1)[1]) + hashTags
+        print(caption)
         print("init gen...")
         commands.wait(5)
         if (commands.checkBanned()):
@@ -55,7 +58,7 @@ def send(tags):
         action.copyWebUrl()
         print("Grabbing Image URL...")
         jobID = pyperclip.paste().split("www.midjourney.com/app/jobs/")[1]
-        out = headline + "\n##" + jobID + "##\n" + quote+  "\n ------\n"
+        out = headline + "\n##" + jobID + "##\n" + caption+  "\n ------\n"
         action.writeToOutput(out)
         print("Saved to output.txt")
         

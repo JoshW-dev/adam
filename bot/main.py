@@ -21,7 +21,7 @@ print("Adam: Starting Webscrape")
 print("News - BBC World")
 for i in range(5):
     commands.wait(2)
-    print(i+"...")
+    print(str(i)+"...")
 print("rewriting")
 #erase old txt files
 action.eraseInput()
@@ -30,7 +30,7 @@ action.eraseOutput()
 commands.wait(1)
 
 #get prompts and populate input.txt
-webscrapper.scrape(20)
+webscrapper.scrape(8)
 commands.wait(3)
 
 #open browser and go to discord midjourney chat
@@ -56,8 +56,8 @@ waterMarksAdded = imageEdit.addWaterMarks()
 commands.wait(5)
 #Post images
 print("Finished -> Send Tweets")
-#twitter.sendTweets()
-#postingContent.postOutputImages()
+twitter.sendTweets()
+postingContent.postOutputImages()
 
 #sending complete 
 print("Complete")

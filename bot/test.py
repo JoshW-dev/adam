@@ -18,6 +18,8 @@ import webbrowser
 import SendPrompts
 import imageEdit
 import postingContent as postInsta
+import postingContent
 
 
-imageEdit.addWaterMarks()
+twitter.sendTweets()
+postingContent.postOutputImages()

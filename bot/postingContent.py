@@ -100,7 +100,6 @@ def postImageInsta (url, caption):
 
 def postOutputImages():
     print("Posting Output to Instagram")
-    hastags="#News #AI #Art #BBC"
     #test auto post image
     urlPrefix = "https://mj-gallery.com/"
     urlSuffix = "/grid_0.png"
@@ -112,7 +111,7 @@ def postOutputImages():
             jobID = image.split("##")[1].replace("/", "" )
             caption = image.split("##")[2]            
             url = urlPrefix + jobID + urlSuffix
-            instaCaption = prompt + "-BBC News"+"\n\n"+hastags            
+            instaCaption = caption            
             postImageInsta(url,instaCaption)
         except:
             print("Insta Posting: An exception occurred")
