@@ -23,11 +23,11 @@ def sendPrompt(prompt):
     commands.movetoRandom(promptLocation[0],promptLocation[1],.5)
     commands.click()
     commands.typeCharacters("/imagine")
-    commands.wait(0.5)
+    commands.wait(1)
     commands.presskey("enter")
-    commands.wait(0.1)
+    commands.wait(0.3)
     commands.typeCharacters(prompt)
-    commands.wait(0.1)
+    commands.wait(0.3)
     commands.presskey("enter")
     commands.movetoRandom(1200,1000,0.5)
     
@@ -76,13 +76,13 @@ def replaceBannedWords(message):
     BannedwordsGore =  ["Blood", "Bloodbath", "Bloody", "Flesh", "Bruises", "Corpse", "Cutting", "Infested", "Gruesome", "Infected", "Sadist", "Teratoma", "Tryphophobia", "Wound", "Cronenberg", "Khorne", "Cannibal", "Cannibalism", "Visceral", "Guts", "Bloodshot", "Gory", "Surgery", "Hemoglobin"]
     BannedwordsTaboo = ["Fascist", "Nazi", "Prophet Mohammed", "Slave", "Coon", "Honkey"]
     BannedwordsDrugs = ["Cocaine", "Heroin", "Meth", "Crack"]
-    BannedwordsNaughty = ["rape", "sex","Sexy"]
+    BannedwordsNaughty = ["rape", "sex","Sexy","perverted"]
 
     replaceWordKill="slain"
     replaceWordGore = "painful"
     replaceWordTaboo = "evil"
     replaceWordDrugs = "drugs"
-    replaceWordNaughty = "fornication"
+    replaceWordNaughty = "scandalous"
 
     for word in BannedwordsKill:
         cleanMessage = re.sub('(?i)'+re.escape(word), lambda m: replaceWordKill, message)
@@ -102,18 +102,19 @@ def replaceBannedWords(message):
 
     return message
 
-def writeToInput(lines):
-    f = open("./Inputs/input.txt", "w")
+def writeToInput(lines,fileName):
+    f = open("./Inputs/"+fileName, "w")
     f.write(lines)
     f.close()
 
-def eraseInput():
-    open("./Inputs/input.txt", "w").close()
-def eraseOutput():
-    open("./Outputs/output.txt", "w").close()
+def eraseInput(inputFileName):
+    open("./Inputs/"+inputFileName, "w").close()
+
+def eraseOutput(outputFileName):
+    open("./Outputs/"+outputFileName, "w").close()
     
-def writeToOutput(lines):
-    with open('./Outputs/output.txt','a') as f:
+def writeToOutput(lines,outputFileName):
+    with open('./Outputs/'+outputFileName,'a') as f:
         f.write(lines)
 
 def copyWebUrl():

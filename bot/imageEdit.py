@@ -102,3 +102,10 @@ def addSignatures():
                         addSignature(jobID + ".png")
                 except:
                         print("An exception occurred")
+def cleanFolder():
+    print("deleting all saved generated images")
+    dir_name = "./GeneratedImages"
+    test = os.listdir(dir_name)
+    for item in test:
+        if item.endswith(".png"):
+            os.remove(os.path.join(dir_name, item))

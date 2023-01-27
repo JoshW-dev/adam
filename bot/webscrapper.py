@@ -4,7 +4,7 @@ import random
 from bs4 import BeautifulSoup
 
 
-def scrape(numHeadlines):
+def scrape(numHeadlines,inputFileName):
     #BBC  news: world news headlines
     url = "https://www.bbc.com/news/world"
     print("Webscrapping...")
@@ -30,7 +30,7 @@ def scrape(numHeadlines):
         i+=1
         if(i>=numHeadlines):
             break
-    action.writeToInput(prompts)
+    action.writeToInput(prompts,inputFileName)
     print("Webscrapper complete")
 
 def getQuotes(keywords):

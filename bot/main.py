@@ -11,6 +11,8 @@ import time
 import postingContent
 #Set painting styles
 tags = ", news, realistic, award winning photography, creative, rich colors, photograph,"
+inputFileName="input.txt"
+outputFileName="output.txt"
 
 start = time.time()
 
@@ -20,17 +22,17 @@ for i in range(50):
 print("Adam: Starting Webscrape")
 print("News - BBC World")
 for i in range(5):
-    commands.wait(2)
+    commands.wait(1)
     print(str(i)+"...")
 print("rewriting")
 #erase old txt files
-action.eraseInput()
-action.eraseOutput()
+action.eraseInput(inputFileName)
+action.eraseOutput(outputFileName)
 
 commands.wait(1)
 
-#get prompts and populate input.txt
-webscrapper.scrape(8)
+#get prompts and populate input file
+webscrapper.scrape(8,inputFileName)
 commands.wait(3)
 
 #open browser and go to discord midjourney chat
@@ -40,7 +42,7 @@ commands.wait(10)
 commands.alignLeft()
 
 print("Sending prompts...")
-complete = SendPrompts.send(tags)
+complete = SendPrompts.send(tags,inputFileName,outputFileName)
 print("Main - Prompts complete: " + str(complete))
 
 #Download images

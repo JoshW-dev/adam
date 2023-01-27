@@ -20,4 +20,13 @@ import imageEdit
 import postingContent as postInsta
 import postingContent
 
-imageEdit.cleanFolder()
+
+midjourney_chat = os.getenv('Midjourneybot-Channel')
+webbrowser.open(midjourney_chat)
+commands.wait(10)
+commands.alignLeft()
+
+print("Sending prompts...")
+tags="ethereal, limerent, dream-like, noir --ar 3:2"
+file="input song.txt"
+complete = SendPrompts.send(tags,"input song.txt","ouput-song.txt")

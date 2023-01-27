@@ -1,6 +1,8 @@
 import time
 import define
 import download
+import requests
+import facebook
 
 def createMediaObject(params):
     """ Create media object
@@ -115,35 +117,16 @@ def postOutputImages():
             postImageInsta(url,instaCaption)
         except:
             print("Insta Posting: An exception occurred")
-
-
 #not done
 def postImageFaceBook(url, caption):
-    params = define.getCredsFB() 
+    params = define.getCredsFB() # get creds from defines
     params['media_type'] = 'IMAGE' # type of asset
     #must be png
-    params['media_url'] = url # url on public server for the post
     params['caption'] = caption
- 
-    imageMediaObjectResponse = createMediaObject( params ) # create a media object through the api
-    imageMediaObjectId = imageMediaObjectResponse['json_data']['id'] # id of the media object that was created
-    imageMediaStatusCode = 'IN_PROGRESS';
-
-    print( "\n---- IMAGE MEDIA OBJECT -----\n" ) # title
-    print( "\tID:" ) # label
-    print( "\t" + imageMediaObjectId ) # id of the object
-
-    while imageMediaStatusCode != 'FINISHED' : # keep checking until the object status is finished
-        imageMediaObjectStatusResponse = getMediaObjectStatus( imageMediaObjectId, params ) # check the status on the object
-        imageMediaStatusCode = imageMediaObjectStatusResponse['json_data']['status_code'] # update status code
-
-        print( "\n---- IMAGE MEDIA OBJECT STATUS -----\n" ) # display status response
-        print( "\tStatus Code:" ) # label
-        print( "\t" + imageMediaStatusCode ) # status code of the object
-        time.sleep( 5 ) # wait 5 seconds if the media object is still being processed
-
-    publishImageResponse = publishMedia( imageMediaObjectId, params ) # publish the post to instagram
-
-    print( "\n---- PUBLISHED IMAGE RESPONSE -----\n" ) # title
-    print( "\tResponse:" ) # label
-    print( publishImageResponse['json_data_pretty'] ) # json response from ig api
+    
+    facebook_page_id = params['page_id']
+    facebook_access_token_1 = params['access_token']
+    
+    graph = facebook.GraphAPI(access_token=facebook_access_token_1)
+    x=graph.put_object(facebook_page_id,'photos',message=caption, url = url)
+    print(x)
