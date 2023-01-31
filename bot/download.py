@@ -1,7 +1,7 @@
 import action
 import os
-def parseOutput():
-        with open('./Outputs/output.txt') as f:
+def parseOutput(outputFileName):
+        with open('./Outputs/'+outputFileName) as f:
                 images = f.read().split("------") 
                 return images
         #pass returned image list to downloadOutputs()
@@ -24,7 +24,7 @@ def downloadOutputs(images):
                 except:
                         print("An exception occurred")    
     
-def downloadImages():
-    #download all generated images from output.txt
-    images = parseOutput()
+def downloadImages(outputFileName):
+    #download all generated images from output file
+    images = parseOutput(outputFileName)
     downloadOutputs(images)    

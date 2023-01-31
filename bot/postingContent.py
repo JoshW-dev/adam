@@ -100,20 +100,21 @@ def postImageInsta (url, caption):
     print( "\tResponse:" ) # label
     print( publishImageResponse['json_data_pretty'] ) # json response from ig api
 
-def postOutputImages():
+def postOutputImages(outputFileName):
     print("Posting Output to Instagram")
-    #test auto post image
     urlPrefix = "https://mj-gallery.com/"
     urlSuffix = "/grid_0.png"
 
-    images = download.parseOutput()
+
+    instaTags ="#instagood #instagram #followme #photooftheday #bhfyp #instalike #l #instadaily #me #picoftheday #beautiful #myself #fashion #smile #followers #f #comment #bhfyp #likes #like #follow #likeforlikes #love"
+    images = download.parseOutput(outputFileName)
     for image in images:
         try:
             prompt = image.split("##")[0]
             jobID = image.split("##")[1].replace("/", "" )
-            caption = image.split("##")[2]            
+            caption = image.split("##")[2] + instaTags            
             url = urlPrefix + jobID + urlSuffix
-            instaCaption = caption            
+            instaCaption = caption
             postImageInsta(url,instaCaption)
         except:
             print("Insta Posting: An exception occurred")

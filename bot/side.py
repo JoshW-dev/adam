@@ -27,6 +27,10 @@ commands.wait(10)
 commands.alignLeft()
 
 print("Sending prompts...")
-tags="ethereal, limerent, dream-like, noir --ar 3:2"
-file="input song.txt"
-complete = SendPrompts.send(tags,"input song.txt","ouput-song.txt")
+tags=", cute cartoon, tim warnes"
+inputFile="input-test.txt"
+outputFile="output-test.txt"
+
+complete = SendPrompts.send(tags,inputFile,outputFile)
+#Download images
+download.downloadImages(outputFile)

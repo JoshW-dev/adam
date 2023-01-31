@@ -38,8 +38,8 @@ def getPublicTweets():
 
 #Loop through n first images and send to twitter with news headline
 
-def sendTweets():
-    images = download.parseOutput()
+def sendTweets(outputFileName):
+    images = download.parseOutput(outputFileName)
     for image in images:
                 try:
                         prompt = image.split("##")[0]

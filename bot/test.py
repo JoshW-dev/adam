@@ -20,4 +20,10 @@ import imageEdit
 import postingContent as postInsta
 import postingContent
 
-imageEdit.cleanFolder()
+outputFileName="output.txt"
+imageEdit.addSignatures(outputFileName)
+waterMarksAdded = imageEdit.addWaterMarks(outputFileName)
+commands.wait(5)
+print("Finished -> Send Tweets")
+twitter.sendTweets(outputFileName)
+postingContent.postOutputImages(outputFileName)

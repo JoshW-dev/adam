@@ -46,20 +46,20 @@ complete = SendPrompts.send(tags,inputFileName,outputFileName)
 print("Main - Prompts complete: " + str(complete))
 
 #Download images
-download.downloadImages()
+download.downloadImages(outputFileName)
 #sign images
-imageEdit.addSignatures()
+imageEdit.addSignatures(outputFileName)
 #add quote captions
 #quotesAdded = imageEdit.addQuotes()
 #add AI watermark
-waterMarksAdded = imageEdit.addWaterMarks()
+waterMarksAdded = imageEdit.addWaterMarks(outputFileName)
 
 
 commands.wait(5)
 #Post images
 print("Finished -> Send Tweets")
-twitter.sendTweets()
-postingContent.postOutputImages()
+twitter.sendTweets(outputFileName)
+postingContent.postOutputImages(outputFileName)
 
 #sending complete 
 print("Complete")

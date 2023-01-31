@@ -66,9 +66,9 @@ def addQuotes():
                 except:
                         print("An exception occurred")
                         return (True)
-def addWaterMarks():
+def addWaterMarks(outputFileName):
     print("Adding Watermark to all output images...")
-    images = download.parseOutput()
+    images = download.parseOutput(outputFileName)
     for image in images:
                 try:
                         prompt = image.split("##")[0]
@@ -91,9 +91,9 @@ def addSignature(backgroundImage):
     back_im.save(imagePath + backgroundImage, quality=100)
     print("Signed")
 
-def addSignatures():
+def addSignatures(outputFileName):
     print("Adding signatures to all output images")
-    images = download.parseOutput()
+    images = download.parseOutput(outputFileName)
     for image in images:
                 try:
                         prompt = image.split("##")[0]
