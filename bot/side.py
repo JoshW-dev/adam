@@ -27,7 +27,7 @@ commands.wait(10)
 commands.alignLeft()
 
 print("Sending prompts...")
-tags=", cute cartoon, tim warnes"
+tags=", cartoon, tim warnes"
 inputFile="input-test.txt"
 outputFile="output-test.txt"
 
