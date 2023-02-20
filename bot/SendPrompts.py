@@ -28,7 +28,12 @@ def send(tags,inputFileName,outputFileName):
         #quote = "\""+quoteList[0] +"\"" +"\n    -"+ quoteList[1]
         
         #create caption
-        caption = headline + "\n-BBC News"+"\n\n" +' #'+(action.keywords(prompt,2,1)[0])+' #'+(action.keywords(prompt,2,1)[1]) + hashTags
+        keywordTags = ""
+        keywords = action.keywords(prompt,2,1)
+        for i in range(len(keywords)):
+            keywordTags += " #"+keywords[i]
+            
+        caption = headline + "\n-BBC News"+"\n\n" +keywordTags+ hashTags
         print(caption)
         print("init gen...")
         commands.wait(5)

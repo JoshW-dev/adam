@@ -10,7 +10,7 @@ import imageEdit
 import time
 import postingContent
 #Set painting styles
-tags = ", news, realistic, award winning photography, creative, rich colors, watercolor painting,"
+tags = ", news, award winning photography, creative, rich colors, watercolor painting style,"
 inputFileName="input.txt"
 outputFileName="output.txt"
 
