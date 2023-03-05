@@ -21,9 +21,4 @@ import postingContent as postInsta
 import postingContent
 outputFileName="output.txt"
 
-prompt="Victim's relative lunges at gunman before sentence"
-keywordTags = ""
-keywords = action.keywords(prompt,2,1)
-for i in range(len(keywords)):
-    keywordTags += " #"+keywords[i]
-print(keywordTags)
+postingContent.postOutputImages(outputFileName)
