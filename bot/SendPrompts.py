@@ -6,14 +6,18 @@ import webscrapper
 
 from clickerTyper import commands
 
-hashTags = " #News #AI #Art #BBC"
 def send(tags,inputFileName,outputFileName):
     with open('./Inputs/'+inputFileName) as f:
         prompts = f.read().splitlines()
-
+        
     print("Started...")
     for prompt in prompts:
-        headline = prompt
+        hashTags = " #News #AI #Art"
+
+        headline = prompt.split("||")[0]
+        source=prompt.split("||")[1]
+        hashTags = hashTags+" #"+source.replace(" ","")
+        print(hashTags)
         prompt = action.replaceBannedWords(headline)
         keywords = ", " + ', '.join(action.keywords(prompt,2,2))
         fullPrompt   = (prompt +keywords+ tags)
@@ -29,11 +33,11 @@ def send(tags,inputFileName,outputFileName):
         
         #create caption
         keywordTags = ""
-        keywords = action.keywords(prompt,2,1)
+        keywords = action.keywords(headline,2,1)
         for i in range(len(keywords)):
             keywordTags += " #"+keywords[i]
             
-        caption = headline + "\n-BBC News"+"\n\n" +keywordTags+ hashTags
+        caption = headline + "\n-"+source+"\n\n" +keywordTags+ hashTags
         print(caption)
         print("init gen...")
         commands.wait(5)

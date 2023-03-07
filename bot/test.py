@@ -19,6 +19,11 @@ import SendPrompts
 import imageEdit
 import postingContent as postInsta
 import postingContent
+
+inputFileName="input.txt"
 outputFileName="output.txt"
 
-postingContent.postOutputImages(outputFileName)
+tags = ", news, dslr, award winning photography,"
+
+
+webscrapper.scrapeAlarabiya(3,inputFileName,"https://english.alarabiya.net/News/world")

@@ -102,11 +102,11 @@ def replaceBannedWords(message):
 
     return message
 
-def writeToInput(lines,fileName):
-    f = open("./Inputs/"+fileName, "w")
-    f.write(lines)
-    f.close()
+def writeToInput(lines,fileName):    
+    with open('./Inputs/'+fileName,'a') as f:
+        f.write(lines)
 
+    
 def eraseInput(inputFileName):
     open("./Inputs/"+inputFileName, "w").close()
 

@@ -10,7 +10,7 @@ import imageEdit
 import time
 import postingContent
 #Set painting styles
-tags = ", news, realistic, award winning photography, creative, rich colors, photograph,"
+tags = ", dslr, award winning photography,"
 inputFileName="input.txt"
 outputFileName="output.txt"
 
@@ -20,7 +20,6 @@ start = time.time()
 for i in range(50):
     print()
 print("Adam: Starting Webscrape")
-print("News - BBC World")
 for i in range(5):
     commands.wait(1)
     print(str(i)+"...")
@@ -31,8 +30,15 @@ action.eraseOutput(outputFileName)
 
 commands.wait(1)
 
+
 #get prompts and populate input file
-webscrapper.scrape(8,inputFileName)
+
+#BBC
+webscrapper.scrape(3,inputFileName)
+webscrapper.scrapeFox(3,inputFileName,"https://www.foxnews.com/world")
+webscrapper.scrapeCNN(3,inputFileName,"https://www.cnn.com/world")
+webscrapper.scrapeAlarabiya(3,inputFileName,"https://english.alarabiya.net/News/world")
+
 commands.wait(3)
 
 #open browser and go to discord midjourney chat
@@ -42,6 +48,8 @@ commands.wait(10)
 commands.alignLeft()
 
 print("Sending prompts...")
+
+
 complete = SendPrompts.send(tags,inputFileName,outputFileName)
 print("Main - Prompts complete: " + str(complete))
 
@@ -59,7 +67,7 @@ commands.wait(5)
 #Post images
 print("Finished -> Send Tweets")
 twitter.sendTweets(outputFileName)
-postingContent.postOutputImages(outputFileName)
+#postingContent.postOutputImages(outputFileName)
 
 #sending complete 
 print("Complete")
