@@ -114,7 +114,8 @@ def scrapeAlarabiya(numHeadlines,inputFileName, newsUrl):
     for story in stories:
         headline = story.contents[0].replace("\n", "" ).strip()
         print(headline)
-        headlines.append(headline)
+        if(len(headline) >0):
+            headlines.append(headline)
     prompts =""
     #write to input text file
     i = 0

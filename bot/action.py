@@ -116,6 +116,9 @@ def eraseOutput(outputFileName):
 def writeToOutput(lines,outputFileName):
     with open('./Outputs/'+outputFileName,'a') as f:
         f.write(lines)
+    with open('./Outputs/log.txt','a') as f:
+        f.write(lines)
+    
 
 def copyWebUrl():
     #find a better way to do this
