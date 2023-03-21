@@ -27,4 +27,4 @@ tags = ", news, dslr, award winning photography,"
 
 
 
-gitPush.git_push("add auto pushing with python")
+gitPush.git_push("Configure autogit push")

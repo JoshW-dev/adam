@@ -5,6 +5,7 @@ import shutil
 import os
 import download
 import re
+from datetime import date
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -117,7 +118,7 @@ def writeToOutput(lines,outputFileName):
     with open('./Outputs/'+outputFileName,'a') as f:
         f.write(lines)
     with open('./Outputs/log.txt','a') as f:
-        f.write(lines)
+        f.write(date.today()+'\n'+ lines)
     
 
 def copyWebUrl():
