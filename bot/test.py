@@ -20,6 +20,8 @@ import imageEdit
 import postingContent as postInsta
 import postingContent
 import gitPush
+from datetime import date
+
 inputFileName="input.txt"
 outputFileName="output.txt"
 
@@ -27,4 +29,5 @@ tags = ", news, dslr, award winning photography,"
 
 
 
-gitPush.git_push("fix env")
+print("Pushing updated output log to github")
+gitPush.git_push("Update News Output log: " + str(date.today()))

@@ -118,7 +118,7 @@ def writeToOutput(lines,outputFileName):
     with open('./Outputs/'+outputFileName,'a') as f:
         f.write(lines)
     with open('./Outputs/log.txt','a') as f:
-        f.write(date.today()+'\n'+ lines)
+        f.write(str(date.today())+'\n'+ lines)
     
 
 def copyWebUrl():

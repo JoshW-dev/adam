@@ -10,6 +10,7 @@ import imageEdit
 import time
 import postingContent
 import gitPush
+from datetime import date
 
 #Set painting styles
 tags = ", dslr, award winning photography,"
@@ -79,3 +80,4 @@ executionLength = end - start
 print("Total execution time: " + str(executionLength/60) + " minutes")
 
 print("Pushing updated output log to github")
+gitPush.git_push("Update News Output log: " + str(date.today()))
