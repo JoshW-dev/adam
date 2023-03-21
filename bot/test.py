@@ -27,4 +27,4 @@ tags = ", news, dslr, award winning photography,"
 
 
 
-gitPush.git_push("Configure autogit push")
+gitPush.git_push("fix env")

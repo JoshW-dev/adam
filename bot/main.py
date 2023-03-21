@@ -9,6 +9,8 @@ import SendPrompts
 import imageEdit
 import time
 import postingContent
+import gitPush
+
 #Set painting styles
 tags = ", dslr, award winning photography,"
 inputFileName="input.txt"
@@ -75,3 +77,5 @@ end = time.time()
 
 executionLength = end - start
 print("Total execution time: " + str(executionLength/60) + " minutes")
+
+print("Pushing updated output log to github")
