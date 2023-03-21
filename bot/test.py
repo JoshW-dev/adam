@@ -19,11 +19,12 @@ import SendPrompts
 import imageEdit
 import postingContent as postInsta
 import postingContent
-
+import gitPush
 inputFileName="input.txt"
 outputFileName="output.txt"
 
 tags = ", news, dslr, award winning photography,"
 
 
-webscrapper.scrapeAlarabiya(3,inputFileName,"https://english.alarabiya.net/News/world")
+
+gitPush.git_push("add auto pushing with python")
