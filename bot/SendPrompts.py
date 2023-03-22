@@ -33,7 +33,7 @@ def send(tags,inputFileName,outputFileName):
         
         #create caption
         keywordTags = ""
-        keywords = action.keywords(headline,2,1)
+        keywords = action.keywords(headline,3,1)
         for i in range(len(keywords)):
             keywordTags += " #"+keywords[i].capitalize()
             
