@@ -78,13 +78,14 @@ def replaceBannedWords(message):
     BannedwordsTaboo = ["Fascist", "Nazi", "Prophet Mohammed", "Slave", "Coon", "Honkey"]
     BannedwordsDrugs = ["Cocaine", "Heroin", "Meth", "Crack"]
     BannedwordsNaughty = ["rape", "sex","Sexy","perverted"]
-
+    BannedwordsArrest = ["arrest", "arrested"]
+    
     replaceWordKill="slain"
     replaceWordGore = "painful"
     replaceWordTaboo = "evil"
     replaceWordDrugs = "drugs"
     replaceWordNaughty = "scandalous"
-
+    replaceWordArrest = "detain"
     for word in BannedwordsKill:
         cleanMessage = re.sub('(?i)'+re.escape(word), lambda m: replaceWordKill, message)
         message = cleanMessage
@@ -99,6 +100,9 @@ def replaceBannedWords(message):
         message = cleanMessage
     for word in BannedwordsNaughty:
         cleanMessage = re.sub('(?i)'+re.escape(word), lambda m: replaceWordNaughty, message)
+        message = cleanMessage
+    for word in BannedwordsArrest:
+        cleanMessage = re.sub('(?i)'+re.escape(word), lambda m: replaceWordArrest, message)
         message = cleanMessage
 
     return message
