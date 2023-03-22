@@ -35,7 +35,7 @@ def send(tags,inputFileName,outputFileName):
         keywordTags = ""
         keywords = action.keywords(headline,2,1)
         for i in range(len(keywords)):
-            keywordTags += " #"+keywords[i]
+            keywordTags += " #"+keywords[i].capitalize()
             
         caption = headline + "\n-"+source+"\n\n" +keywordTags+ hashTags
         print(caption)
