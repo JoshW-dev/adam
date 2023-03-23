@@ -12,7 +12,7 @@ def send(tags,inputFileName,outputFileName):
         
     print("Started...")
     for prompt in prompts:
-        hashTags = " #News #AI #Art"
+        hashTags = " #News #AI #Art #GPT"
 
         headline = prompt.split("||")[0]
         source=prompt.split("||")[1]
