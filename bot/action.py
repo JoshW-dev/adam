@@ -74,7 +74,7 @@ def keywords(input, numOfKeywords,max_ngram_size):
 def replaceBannedWords(message):
     #cycle through dictionary of midjourney banned terms and replace with acceptable words
     BannedwordsKill = ["execution", "executed" "Crucifixion", "Car crash", "Crucified", "Kill", "Slaughter", "Decapitate", "Killing", "Vivisection", "Massacre", "Suicide"]
-    BannedwordsGore =  ["Blood", "Bloodbath", "Bloody", "Flesh", "Bruises", "Corpse", "Cutting", "Infested", "Gruesome", "Infected", "Sadist", "Teratoma", "Tryphophobia", "Wound", "Cronenberg", "Khorne", "Cannibal", "Cannibalism", "Visceral", "Guts", "Bloodshot", "Gory", "Surgery", "Hemoglobin"]
+    BannedwordsGore =  ["torture","Blood", "Bloodbath", "Bloody", "Flesh", "Bruises", "Corpse", "Cutting", "Infested", "Gruesome", "Infected", "Sadist", "Teratoma", "Tryphophobia", "Wound", "Cronenberg", "Khorne", "Cannibal", "Cannibalism", "Visceral", "Guts", "Bloodshot", "Gory", "Surgery", "Hemoglobin"]
     BannedwordsTaboo = ["Fascist", "Nazi", "Prophet Mohammed", "Slave", "Coon", "Honkey"]
     BannedwordsDrugs = ["Cocaine", "Heroin", "Meth", "Crack"]
     BannedwordsNaughty = ["rape", "sex","Sexy","perverted"]
