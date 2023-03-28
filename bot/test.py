@@ -25,7 +25,7 @@ from datetime import date
 inputFileName="input.txt"
 outputFileName="output.txt"
 
-tags = ", news, dslr, award winning photography,"
+tags = ", news, award winning photography,"
 
 
 
