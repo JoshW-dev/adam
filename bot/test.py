@@ -25,9 +25,4 @@ from datetime import date
 inputFileName="input.txt"
 outputFileName="output.txt"
 
-tags = ", news, award winning photography,"
-
-
-
-print("Pushing updated output log to github")
-gitPush.git_push("Update News Output log: " + str(date.today()))
+action.clearGeneratedImages()

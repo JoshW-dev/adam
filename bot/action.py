@@ -117,6 +117,14 @@ def eraseInput(inputFileName):
 
 def eraseOutput(outputFileName):
     open("./Outputs/"+outputFileName, "w").close()
+
+def clearGeneratedImages():
+    dir_name = os.getenv('PATH_OF_GIT_REPO') + "/bot/GeneratedImages"
+    print("Delete saved .png fiels in: " + dir_name)
+    test = os.listdir(dir_name)
+    for item in test:
+        if item.endswith(".png"):
+            os.remove(os.path.join(dir_name, item))
     
 def writeToOutput(lines,outputFileName):
     with open('./Outputs/'+outputFileName,'a') as f:

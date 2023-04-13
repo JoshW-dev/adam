@@ -13,7 +13,7 @@ import gitPush
 from datetime import date
 
 #Set painting styles
-tags = ", award winning photography,"
+tags = ", award winning photography, --v5"
 inputFileName="input.txt"
 outputFileName="output.txt"
 
