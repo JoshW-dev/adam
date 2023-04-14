@@ -1,84 +1,91 @@
 Where people drink beer for breakfast
-##9721c781-c419-47f1-953e-19fd8e589b8c/##
+##d64c12d4-c375-436e-9e3a-6aa2dae3eaec/##
 Where people drink beer for breakfast
 -BBC News
 
  #Breakfast #People #Drink #News #AI #Art #GPT #BBCNews
  ------
-Nasa's JPL snake robot explores extreme terrain
-##adacbe65-3852-4ffd-9c6e-b6ceaf4b9c83/##
-Nasa's JPL snake robot explores extreme terrain
+Texas dairy farm explosion kills 18,000 cows
+##4c182bb6-66e8-4c02-9b0b-d40ccd9c8c83/##
+Texas dairy farm explosion kills 18,000 cows
 -BBC News
 
- #Jpl #Nasa #Terrain #News #AI #Art #GPT #BBCNews
+ #Cows #Texas #Kills #News #AI #Art #GPT #BBCNews
  ------
-Wait in line: Russian foreign minister left waiting for visa to enter US ahead of UN meeting
-##7ce4edaf-4285-4617-a593-226e4b72a091/##
-Wait in line: Russian foreign minister left waiting for visa to enter US ahead of UN meeting
+America's fastest-growing gun problem
+##c3bbb4b8-3bf3-4b8f-8000-f4bd89fe234b/##
+America's fastest-growing gun problem
+-BBC News
+
+ #America #Problem #Fastest-growing #News #AI #Art #GPT #BBCNews
+ ------
+France's Macron defends controversial comments on being US ally amid Chinese aggression toward Taiwan
+##01c34de1-a39c-4cb3-8a3e-18413256dd09/##
+France's Macron defends controversial comments on being US ally amid Chinese aggression toward Taiwan
 -Fox News
 
- #Russian #Wait #Line #News #AI #Art #GPT #FoxNews
+ #Taiwan #Macron #Chinese #News #AI #Art #GPT #FoxNews
  ------
-Iran smuggled weapons to terror proxy under guise of humanitarian aid: report
-##516eeeb1-1d53-413e-8b8e-6e5b92b56087/##
-Iran smuggled weapons to terror proxy under guise of humanitarian aid: report
+Vancouver police remove, arrest squatter who set up encampment on one of city's most expensive properties
+##a8355286-6442-4fb0-ba18-f4bb7af87e26/##
+Vancouver police remove, arrest squatter who set up encampment on one of city's most expensive properties
 -Fox News
 
- #Report #Iran #Aid #News #AI #Art #GPT #FoxNews
+ #Vancouver #Remove #Arrest #News #AI #Art #GPT #FoxNews
  ------
-US Special Forces in Ukraine at embassy, official confirms, as Pentagon document leak probe heats up
-##001442dd-1f4b-4381-aedb-c2c224e674f1/##
-US Special Forces in Ukraine at embassy, official confirms, as Pentagon document leak probe heats up
+‘Every shot counts’: the mobile air defense protecting Ukraine's skies at a moment's notice
+##c0e36b4a-1ee7-4a45-b645-6a5bba4a9c17/##
+‘Every shot counts’: the mobile air defense protecting Ukraine's skies at a moment's notice
 -Fox News
 
- #Special #Forces #Ukraine #News #AI #Art #GPT #FoxNews
+ #Ukraine #Counts’ #Notice #News #AI #Art #GPT #FoxNews
  ------
-Fear and confusion in Japan’s Hokkaido as North Korean missile triggers evacuation order
-##4b035886-f1c6-4f34-a5ca-baa0dbe75589/##
-Fear and confusion in Japan’s Hokkaido as North Korean missile triggers evacuation order
+North Korea says it tested a new solid-fuel ICBM
+##41839794-5aee-40d2-9534-344e292451c7/##
+North Korea says it tested a new solid-fuel ICBM
 -CNN
 
- #Japan #Hokkaido #North #News #AI #Art #GPT #CNN
+ #Icbm #Korea #North #News #AI #Art #GPT #CNN
  ------
-Cyclone Ilsa rapidly intensifies as it approaches landfall in Western Australia
-##2e3e8184-8c70-4cc7-8835-a807401c5409/##
-Cyclone Ilsa rapidly intensifies as it approaches landfall in Western Australia
+French protesters storm headquarters of luxury giant LVMH
+##66958c11-49ed-4ce5-b1b2-b2bd13a21c9c/##
+French protesters storm headquarters of luxury giant LVMH
 -CNN
 
- #Australia #Ilsa #Western #News #AI #Art #GPT #CNN
+ #Lvmh #French #Protesters #News #AI #Art #GPT #CNN
  ------
-Drugs suspect escapes Hong Kong court by switching wristbands with another man
-##21d49734-4555-4250-a084-8cf3acf8456c/##
-Drugs suspect escapes Hong Kong court by switching wristbands with another man
+Cyclone Ilsa sets a new wind record as it smashes into Australia’s western coast
+##f627cbb2-cfc9-4cb7-8a47-9b482eceb0bd/##
+Cyclone Ilsa sets a new wind record as it smashes into Australia’s western coast
 -CNN
 
- #Hong #Kong #Drugs #News #AI #Art #GPT #CNN
+ #Ilsa #Australia #Cyclone #News #AI #Art #GPT #CNN
  ------
-Louisville shooting: Shooter’s mother called 911 to warn of son’s plans
-##3c3aa980-9053-4d57-935d-07ea9b907d57/##
-Louisville shooting: Shooter’s mother called 911 to warn of son’s plans
+North Korea says it tested new solid-fuel missile
+##b7194037-2fcf-4511-866f-1329c2243947/##
+North Korea says it tested new solid-fuel missile
 -Al Arabiya
 
- #Shooter #Louisville #Shooting #News #AI #Art #GPT #AlArabiya
+ #Korea #North #Missile #News #AI #Art #GPT #AlArabiya
  ------
-Four firefighters die in garment factory blaze in Pakistan's Karachi
-##36e76a45-90aa-436e-884a-8439203916d6/##
-Four firefighters die in garment factory blaze in Pakistan's Karachi
+US arrests Jack Teixeira in connection with classified defense information leak
+##5b2217ce-e20c-4e42-adeb-b702081a2c0f/##
+US arrests Jack Teixeira in connection with classified defense information leak
 -Al Arabiya
 
- #Karachi #Pakistan #Firefighters #News #AI #Art #GPT #AlArabiya
+ #Jack #Teixeira #Leak #News #AI #Art #GPT #AlArabiya
  ------
-Severe Category 4 tropical cyclone Ilsa lashes Australian coast
-##2203a871-e528-4826-aa0b-4e56957393dd/##
-Severe Category 4 tropical cyclone Ilsa lashes Australian coast
+Leak of classified information was deliberate, criminal act: Pentagon
+##3de35481-88b9-4804-9420-9feb447bacd8/##
+Leak of classified information was deliberate, criminal act: Pentagon
 -Al Arabiya
 
- #Category #Ilsa #Australian #News #AI #Art #GPT #AlArabiya
+ #Pentagon #Leak #Deliberate #News #AI #Art #GPT #AlArabiya
  ------
-Former US president Trump arrives in Manhattan NY attorney general’s deposition
-##7c75686c-fdc7-4660-82d1-093fe933d4cd/##
-Former US president Trump arrives in Manhattan NY attorney general’s deposition
+Earthquake strikes coast off western Canada
+##4b5b3fb5-8b18-4b5c-bc50-4c4cf32400e1/##
+Earthquake strikes coast off western Canada
 -Al Arabiya
 
- #Trump #Manhattan #Deposition #News #AI #Art #GPT #AlArabiya
+ #Canada #Earthquake #Strikes #News #AI #Art #GPT #AlArabiya
  ------
