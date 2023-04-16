@@ -51,5 +51,6 @@ def sendTweets(outputFileName):
                         print(caption) 
                         tweetMessage = caption
                         tweetPic(tweetText=tweetMessage, imageName=jobID + ".png")
+                        print("sent")
                 except:
                         print("An exception occurred")

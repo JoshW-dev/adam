@@ -120,7 +120,7 @@ def eraseOutput(outputFileName):
 
 def clearGeneratedImages():
     dir_name = os.getenv('PATH_OF_GIT_REPO') + "/bot/GeneratedImages"
-    print("Delete saved .png fiels in: " + dir_name)
+    print("Delete saved .png files in: " + dir_name)
     test = os.listdir(dir_name)
     for item in test:
         if item.endswith(".png"):
@@ -156,9 +156,12 @@ def copyWebUrl():
 #needs rework
 
 def downloadImage(url, name):
+    print("downloadImage(" + url + ")")
     downloadLocation = os.getenv('Local-Download-Location')
     r = requests.get(url, stream=True)
+    print("Status: " + str(r.status_code))
     if r.status_code == 200:
+        
         with open(downloadLocation + name+".png", 'wb') as f:
             r.raw.decode_content = True
             shutil.copyfileobj(r.raw, f)
