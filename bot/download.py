@@ -7,7 +7,10 @@ def parseOutput(outputFileName):
         #pass returned image list to downloadOutputs()
 def downloadImage(prompt, jobID, caption):
         urlPrefix = "https://cdn.midjourney.com/"
-        urlSuffix = "/0_0.png"
+        #urlSuffix = "/0_0.png"
+
+        urlSuffix = "/grid_0.png"
+
         #need to investigate and improve how this is working, currently picking first U1 option everytime.
         #I think midjourney's database naming system changed recently (04-14)
         url = urlPrefix + jobID + urlSuffix

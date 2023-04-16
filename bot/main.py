@@ -13,7 +13,9 @@ import gitPush
 from datetime import date
 
 #Set painting styles
-tags = " --v 5"
+tags = ", abstract painting"
+#tags = " --v 5"
+
 inputFileName="input.txt"
 outputFileName="output.txt"
 
