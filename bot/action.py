@@ -77,7 +77,7 @@ def replaceBannedWords(message):
     BannedwordsGore =  ["torture","Blood", "Bloodbath", "Bloody", "Flesh", "Bruises", "Corpse", "Cutting", "Infested", "Gruesome", "Infected", "Sadist", "Teratoma", "Tryphophobia", "Wound", "Cronenberg", "Khorne", "Cannibal", "Cannibalism", "Visceral", "Guts", "Bloodshot", "Gory", "Surgery", "Hemoglobin"]
     BannedwordsTaboo = ["Fascist", "Nazi", "Prophet Mohammed", "Slave", "Coon", "Honkey"]
     BannedwordsDrugs = ["Cocaine", "Heroin", "Meth", "Crack"]
-    BannedwordsNaughty = ["rape", "sex","Sexy","perverted"]
+    BannedwordsNaughty = ["rape", "sex","Sexy","perverted","sperm"]
     BannedwordsArrest = ["arrest", "arrested"]
     
     replaceWordKill="slain"
