@@ -23,7 +23,7 @@ def addText(imageName, text, type):
     elif type == "water-mark":
         fontSize = 30
         maxChars = 100
-        position = (width*.24, height*.85)
+        position = (width*.2, height*.9)
     
     elif type == "topLeft-small":
         fontSize = 20
