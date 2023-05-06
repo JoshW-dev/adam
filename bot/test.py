@@ -25,4 +25,17 @@ from datetime import date
 inputFileName="input.txt"
 outputFileName="output.txt"
 
-action.clearGeneratedImages()
+#Download images
+download.downloadImages(outputFileName)
+#sign images
+imageEdit.addSignatures(outputFileName)
+#add quote captions
+#quotesAdded = imageEdit.addQuotes()
+#add AI watermark
+waterMarksAdded = imageEdit.addWaterMarks(outputFileName)
+
+
+commands.wait(5)
+#Post images
+print("Finished -> Send Tweets")
+twitter.sendTweets(outputFileName)
