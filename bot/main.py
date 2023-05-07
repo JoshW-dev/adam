@@ -13,8 +13,7 @@ import gitPush
 from datetime import date
 
 #Set painting styles
-tags = ", abstract painted style"
-#tags = " --v 5"
+tags = ", abstract painted style --v 5"
 
 inputFileName="input.txt"
 outputFileName="output.txt"
@@ -57,6 +56,9 @@ print("Sending prompts...")
 
 complete = SendPrompts.send(tags,inputFileName,outputFileName)
 print("Main - Prompts complete: " + str(complete))
+
+
+#downloading images will be broken until I figure out a better jobID grabbing system
 
 #Download images
 download.downloadImages(outputFileName)

@@ -44,22 +44,16 @@ def send(tags,inputFileName,outputFileName):
         if (commands.checkBanned()):
             continue
         print("not banned")
+        commands.wait(15)
+
+        
+        '''
         complete = action.waitForPrompt(1)
-        #Stage 2
+
+                      #Stage 2
         action.upscale1("U"+str(random.randint(1, 4))+"-Button.png")#randomly upscale 1 of 4 variations
         print("init upscale...")
-        '''
-
-        complete = action.waitForPrompt(2)
-        #Stage 3
-        action.upscale1("Remaster-Button.png")
-        print("init remaster...")
-        complete = action.waitForPrompt(3)
-        #Stage 4
-        action.upscale1("U1-Button.png")
-        print("remaster upscale...")
-        '''
-
+        
         complete = action.waitForPrompt(4)
         print("prompt complete")
         
@@ -67,6 +61,11 @@ def send(tags,inputFileName,outputFileName):
         action.copyWebUrl()
         print("Grabbing Image URL...")
         jobID = pyperclip.paste().split("www.midjourney.com/app/jobs/")[1]
+ 
+        '''
+ 
+        #todo: come up with a solution to get te job ID
+        jobID= "..."
         out = headline + "\n##" + jobID + "##\n" + caption+  "\n ------\n"
         action.writeToOutput(out,outputFileName)
         print("Saved to "+outputFileName)
