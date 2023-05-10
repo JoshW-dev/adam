@@ -25,4 +25,25 @@ from datetime import date
 inputFileName="input.txt"
 outputFileName="output.txt"
 
-action.clearGeneratedImages()
+#Download images
+download.downloadImages(outputFileName)
+#sign images
+commands.wait(20)
+
+imageEdit.addSignatures(outputFileName)
+#add quote captions
+#quotesAdded = imageEdit.addQuotes()
+#add AI watermark
+commands.wait(20)
+
+waterMarksAdded = imageEdit.addWaterMarks(outputFileName)
+
+
+commands.wait(5)
+#Post images
+print("Finished -> Send Tweets")
+twitter.sendTweets(outputFileName)
+#postingContent.postOutputImages(outputFileName)
+
+print("Pushing updated output log to github")
+gitPush.git_push("Update News Output log: " + str(date.today()))
